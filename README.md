@@ -51,6 +51,8 @@
 
 ### 😂 Random Dev Meme
 <img src='https://randommeme-five.vercel.app/' style="height: 400px;"/>
+###
+<br clear="both">
 
----
-[![](https://visitcount.itsvg.in/api?id=Shuvam-Banerji-Seal&icon=5&color=11)](https://visitcount.itsvg.in)
+<img src="https://raw.githubusercontent.com/maurodesouza/maurodesouza/output/snake.svg" alt="Snake animation" />
+###
