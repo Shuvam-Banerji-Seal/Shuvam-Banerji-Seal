@@ -1,6 +1,6 @@
 <h1 align="center">Hi 👋, I'm Shuvam Banerji Seal</h1>
 <h3 align="center">Just your everyday Joe with some random skills.</h3>
-
+<img align="right" width = "400" src = "https://xiangfu.co/assets/projects/mlcgmd/lowres/cg.gif">
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=shuvam-banerji-seal&label=Profile%20views&color=0e75b6&style=flat" alt="shuvam-banerji-seal" /> </p>
 
 <p align="left"> <a href="https://twitter.com/https://twitter.com/techlitmaster" target="blank"><img src="https://img.shields.io/twitter/follow/https://twitter.com/techlitmaster?logo=twitter&style=for-the-badge" alt="https://twitter.com/techlitmaster" /></a> </p>
