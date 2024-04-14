@@ -1,4 +1,4 @@
-[![MasterHead](https://i.imgur.com/Y1hKxHA.gif)]
+[![MasterHead]([https://i.imgur.com/Y1hKxHA.gif](https://github.com/Shuvam-Banerji-Seal/Shuvam-Banerji-Seal/blob/main/ezgif.com-video-to-gif.gif))]
 <h1 align="center">Hi 👋, I'm Shuvam Banerji Seal</h1>
 <h3 align="center">Just your everyday Joe with some random skills.</h3>
 <img align="right" width = "400" src = "https://xiangfu.co/assets/projects/mlcgmd/lowres/cg.gif">
