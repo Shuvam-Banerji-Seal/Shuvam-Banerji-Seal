@@ -22,6 +22,9 @@
 
 - ⚡ Fun fact **I am an Otaku!!**
 
+
+[![activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Shuvam-Banerji-Seal&theme=github-dark-dimmed&custom_title=SBS%20Activity%20Graph&hide_border=true)](https://github.com/Shuvam-Banerji-Seal/github-readme-activity-graph)
+
 <h3 align="left">Connect with me:</h3>
 <p align="left">
 <a href="https://twitter.com/https://twitter.com/techlitmaster" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="https://twitter.com/techlitmaster" height="30" width="40" /></a>
