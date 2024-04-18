@@ -1,4 +1,4 @@
-[![MasterHead]([Head](head.png))]
+[![MasterHead](https://github.com/Shuvam-Banerji-Seal/Shuvam-Banerji-Seal/blob/main/head.png)](https://github.com/Shuvam-Banerji-Seal.io)
 ![Header]([head.png])
 <h1 align="center">Hi 👋, I'm Shuvam Banerji Seal</h1>
 <h3 align="center">Just your everyday Joe with some random skills.</h3>
