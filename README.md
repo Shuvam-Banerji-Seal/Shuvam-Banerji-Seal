@@ -1,5 +1,5 @@
 [![MasterHead]([Head](head.png))]
-![Header](./[head.png])
+![Header]([head.png])
 <h1 align="center">Hi 👋, I'm Shuvam Banerji Seal</h1>
 <h3 align="center">Just your everyday Joe with some random skills.</h3>
 <img align="right" width = "400" src = "https://xiangfu.co/assets/projects/mlcgmd/lowres/cg.gif">
