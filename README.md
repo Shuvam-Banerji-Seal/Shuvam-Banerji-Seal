@@ -1,6 +1,6 @@
 [![MasterHead](https://github.com/Shuvam-Banerji-Seal/Shuvam-Banerji-Seal/blob/main/head.png)](https://github.com/Shuvam-Banerji-Seal.io)
-![Header]([head.png])
-<h1 align="center">Hi 👋, I'm Shuvam Banerji Seal</h1>
+
+
 <h3 align="center">Just your everyday Joe with some random skills.</h3>
 <img align="right" width = "400" src = "https://xiangfu.co/assets/projects/mlcgmd/lowres/cg.gif">
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=shuvam-banerji-seal&label=Profile%20views&color=0e75b6&style=flat" alt="shuvam-banerji-seal" /> </p>
