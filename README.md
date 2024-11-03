@@ -19,7 +19,7 @@
 
 - 📫 How to reach me **sbs22ms076@iiserkol.ac.in**
 
-- 📄 Know about my experiences [https://drive.google.com/file/d/1NQL0uP-j4KLqCrtyEcFnUlryYLV_wuhw/view?usp=sharing](https://drive.google.com/file/d/1NQL0uP-j4KLqCrtyEcFnUlryYLV_wuhw/view?usp=sharing)
+- 📄 Know about my experiences [here](https://github.com/Shuvam-Banerji-Seal/My-CV/blob/main/Shuvam_Banerji_Seal__CV.pdf)
 
 - ⚡ Fun fact **I am an Otaku!!**
 
