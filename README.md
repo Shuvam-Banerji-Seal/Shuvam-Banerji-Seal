@@ -1,6 +1,6 @@
 
 <!-- Banner / Header Section -->
-[![MasterHead](https://github.com/Shuvam-Banerji-Seal/Shuvam-Banerji-Seal/blob/main/head.png)](https://github.com/Shuvam-Banerji-Seal)
+[![MasterHead](https://github.com/Shuvam-Banerji-Seal/Shuvam-Banerji-Seal/blob/main/github-header-image.png)](https://github.com/Shuvam-Banerji-Seal)
 
 <!-- Title & Subtitle -->
 <h2 align="center">Shuvam Banerji Seal</h2>
