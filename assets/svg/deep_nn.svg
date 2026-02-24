@@ -1,0 +1,116 @@
+<svg width="800" height="320" viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      /* Layer colours */
+      .n-input  { fill: #1e3a5f; stroke: #58a6ff; stroke-width:1.5; }
+      .n-h1     { fill: #2d1f4a; stroke: #d2a8ff; stroke-width:1.5; }
+      .n-h2     { fill: #1f3a2d; stroke: #56d364; stroke-width:1.5; }
+      .n-out    { fill: #3a2000; stroke: #f0a830; stroke-width:1.5; }
+      .edge-fwd { stroke: #30363d; stroke-width: 0.8; opacity: 0.5; }
+      .act      { fill: #58a6ff; animation: fire 3s ease-in-out infinite; }
+      .act2     { fill: #d2a8ff; animation: fire 3s ease-in-out 0.4s infinite; }
+      .act3     { fill: #56d364; animation: fire 3s ease-in-out 0.8s infinite; }
+      .act4     { fill: #f0a830; animation: fire 3s ease-in-out 1.2s infinite; }
+      @keyframes fire {
+        0%,100% { r: 6; opacity: 0.4; }
+        50%     { r: 10; opacity: 1; }
+      }
+      .layer-label { fill:#8b949e; font-family:monospace; font-size:10px; text-anchor:middle; }
+      .arch-label  { fill:#c9d1d9; font-family:monospace; font-size:12px; text-anchor:middle; }
+      .main-title  { fill:#c9d1d9; font-family:monospace; font-size:14px; text-anchor:middle; }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="#0d1117" rx="12"/>
+
+  <!-- ════ Layer positions ════ -->
+  <!-- Input  x=90  nodes at y=90,130,170,210,250 -->
+  <!-- H1     x=240 nodes at y=70,110,150,190,230,270 -->
+  <!-- H2     x=400 nodes at y=80,120,160,200,240 -->
+  <!-- H3     x=560 nodes at y=90,130,170,210,250 -->
+  <!-- Output x=710 nodes at y=140,180 -->
+
+  <!-- ─── Edges input→h1 ─── -->
+  <line x1="90" y1="90"  x2="240" y2="70"  class="edge-fwd"/>
+  <line x1="90" y1="90"  x2="240" y2="110" class="edge-fwd"/>
+  <line x1="90" y1="90"  x2="240" y2="150" class="edge-fwd"/>
+  <line x1="90" y1="130" x2="240" y2="70"  class="edge-fwd"/>
+  <line x1="90" y1="130" x2="240" y2="110" class="edge-fwd"/>
+  <line x1="90" y1="170" x2="240" y2="150" class="edge-fwd"/>
+  <line x1="90" y1="170" x2="240" y2="190" class="edge-fwd"/>
+  <line x1="90" y1="210" x2="240" y2="190" class="edge-fwd"/>
+  <line x1="90" y1="210" x2="240" y2="230" class="edge-fwd"/>
+  <line x1="90" y1="250" x2="240" y2="230" class="edge-fwd"/>
+  <line x1="90" y1="250" x2="240" y2="270" class="edge-fwd"/>
+
+  <!-- ─── Edges h1→h2 ─── -->
+  <line x1="240" y1="70"  x2="400" y2="80"  class="edge-fwd"/>
+  <line x1="240" y1="110" x2="400" y2="80"  class="edge-fwd"/>
+  <line x1="240" y1="110" x2="400" y2="120" class="edge-fwd"/>
+  <line x1="240" y1="150" x2="400" y2="120" class="edge-fwd"/>
+  <line x1="240" y1="150" x2="400" y2="160" class="edge-fwd"/>
+  <line x1="240" y1="190" x2="400" y2="160" class="edge-fwd"/>
+  <line x1="240" y1="190" x2="400" y2="200" class="edge-fwd"/>
+  <line x1="240" y1="230" x2="400" y2="200" class="edge-fwd"/>
+  <line x1="240" y1="230" x2="400" y2="240" class="edge-fwd"/>
+  <line x1="240" y1="270" x2="400" y2="240" class="edge-fwd"/>
+
+  <!-- ─── Edges h2→h3 ─── -->
+  <line x1="400" y1="80"  x2="560" y2="90"  class="edge-fwd"/>
+  <line x1="400" y1="120" x2="560" y2="130" class="edge-fwd"/>
+  <line x1="400" y1="160" x2="560" y2="170" class="edge-fwd"/>
+  <line x1="400" y1="200" x2="560" y2="210" class="edge-fwd"/>
+  <line x1="400" y1="240" x2="560" y2="250" class="edge-fwd"/>
+  <line x1="400" y1="80"  x2="560" y2="130" class="edge-fwd"/>
+  <line x1="400" y1="160" x2="560" y2="130" class="edge-fwd"/>
+  <line x1="400" y1="200" x2="560" y2="170" class="edge-fwd"/>
+
+  <!-- ─── Edges h3→output ─── -->
+  <line x1="560" y1="90"  x2="710" y2="140" class="edge-fwd"/>
+  <line x1="560" y1="130" x2="710" y2="140" class="edge-fwd"/>
+  <line x1="560" y1="170" x2="710" y2="160" class="edge-fwd"/>
+  <line x1="560" y1="210" x2="710" y2="180" class="edge-fwd"/>
+  <line x1="560" y1="250" x2="710" y2="180" class="edge-fwd"/>
+
+  <!-- ════ Nodes ════ -->
+  <!-- Input nodes -->
+  <circle cx="90" cy="90"  r="12" class="n-input"/><circle cx="90" cy="90"  r="5" class="act"/>
+  <circle cx="90" cy="130" r="12" class="n-input"/><circle cx="90" cy="130" r="5" class="act"  style="animation-delay:.3s"/>
+  <circle cx="90" cy="170" r="12" class="n-input"/><circle cx="90" cy="170" r="5" class="act"  style="animation-delay:.6s"/>
+  <circle cx="90" cy="210" r="12" class="n-input"/><circle cx="90" cy="210" r="5" class="act"  style="animation-delay:.9s"/>
+  <circle cx="90" cy="250" r="12" class="n-input"/><circle cx="90" cy="250" r="5" class="act"  style="animation-delay:1.2s"/>
+
+  <!-- H1 nodes -->
+  <circle cx="240" cy="70"  r="12" class="n-h1"/><circle cx="240" cy="70"  r="5" class="act2"/>
+  <circle cx="240" cy="110" r="12" class="n-h1"/><circle cx="240" cy="110" r="5" class="act2" style="animation-delay:.2s"/>
+  <circle cx="240" cy="150" r="12" class="n-h1"/><circle cx="240" cy="150" r="5" class="act2" style="animation-delay:.4s"/>
+  <circle cx="240" cy="190" r="12" class="n-h1"/><circle cx="240" cy="190" r="5" class="act2" style="animation-delay:.6s"/>
+  <circle cx="240" cy="230" r="12" class="n-h1"/><circle cx="240" cy="230" r="5" class="act2" style="animation-delay:.8s"/>
+  <circle cx="240" cy="270" r="12" class="n-h1"/><circle cx="240" cy="270" r="5" class="act2" style="animation-delay:1s"/>
+
+  <!-- H2 nodes -->
+  <circle cx="400" cy="80"  r="12" class="n-h2"/><circle cx="400" cy="80"  r="5" class="act3"/>
+  <circle cx="400" cy="120" r="12" class="n-h2"/><circle cx="400" cy="120" r="5" class="act3" style="animation-delay:.4s"/>
+  <circle cx="400" cy="160" r="12" class="n-h2"/><circle cx="400" cy="160" r="5" class="act3" style="animation-delay:.8s"/>
+  <circle cx="400" cy="200" r="12" class="n-h2"/><circle cx="400" cy="200" r="5" class="act3" style="animation-delay:1.2s"/>
+  <circle cx="400" cy="240" r="12" class="n-h2"/><circle cx="400" cy="240" r="5" class="act3" style="animation-delay:1.6s"/>
+
+  <!-- H3 nodes -->
+  <circle cx="560" cy="90"  r="12" class="n-h1"/><circle cx="560" cy="90"  r="5" class="act2" style="animation-delay:.1s"/>
+  <circle cx="560" cy="130" r="12" class="n-h1"/><circle cx="560" cy="130" r="5" class="act2" style="animation-delay:.5s"/>
+  <circle cx="560" cy="170" r="12" class="n-h1"/><circle cx="560" cy="170" r="5" class="act2" style="animation-delay:.9s"/>
+  <circle cx="560" cy="210" r="12" class="n-h1"/><circle cx="560" cy="210" r="5" class="act2" style="animation-delay:1.3s"/>
+  <circle cx="560" cy="250" r="12" class="n-h1"/><circle cx="560" cy="250" r="5" class="act2" style="animation-delay:1.7s"/>
+
+  <!-- Output nodes -->
+  <circle cx="710" cy="140" r="14" class="n-out"/><circle cx="710" cy="140" r="6" class="act4"/>
+  <circle cx="710" cy="180" r="14" class="n-out"/><circle cx="710" cy="180" r="6" class="act4" style="animation-delay:.8s"/>
+
+  <!-- Layer labels -->
+  <text x="90"  y="285" class="layer-label">Input<tspan x="90" dy="12">Layer</tspan></text>
+  <text x="240" y="295" class="layer-label">Hidden 1</text>
+  <text x="400" y="265" class="layer-label">Hidden 2</text>
+  <text x="560" y="275" class="layer-label">Hidden 3</text>
+  <text x="710" y="210" class="layer-label">Output</text>
+
+  <text x="400" y="310" class="main-title">Deep Neural Network — Forward Propagation Visualization</text>
+</svg>

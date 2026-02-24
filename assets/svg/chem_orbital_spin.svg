@@ -1,0 +1,142 @@
+<svg viewBox="0 0 510 310" xmlns="http://www.w3.org/2000/svg" style="background:#0d1117;font-family:monospace">
+  <!--
+    STORY: In [VO(SALIEP)(DTP)], V(IV) has d¹ configuration with one unpaired
+    spin in the dz² orbital, making it EPR-active (S=1/2, g≈1.97).
+    Top: the 5-coordinate complex (V=O core with SALIEP N/O and DTP S donors).
+    Bottom-left: d orbital occupancy boxes (one ↑ electron in dz²).
+    Bottom-right: MO energy stack (HOMO/LUMO gap = ΔE, DFT/B3LYP).
+  -->
+  <defs>
+    <radialGradient id="vx" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#d2a8ff"/><stop offset="100%" stop-color="#6e40c9" stop-opacity="0.18"/></radialGradient>
+    <radialGradient id="ox" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff7b72"/><stop offset="100%" stop-color="#cf222e" stop-opacity="0.2"/></radialGradient>
+    <radialGradient id="nx" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#58a6ff"/><stop offset="100%" stop-color="#1f6feb" stop-opacity="0.2"/></radialGradient>
+    <radialGradient id="sx" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#e3b341"/><stop offset="100%" stop-color="#9e6a03" stop-opacity="0.2"/></radialGradient>
+  </defs>
+
+  <!-- ── Titles ── -->
+  <text x="255" y="18" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">Molecular Orbital Spin — [VO(SALIEP)(DTP)]</text>
+  <text x="255" y="31" text-anchor="middle" fill="#8b949e" font-size="9">Vanadium(IV) d¹ — EPR-active single unpaired electron in dz²</text>
+
+  <!-- ════ TOP PANEL: coordination complex centred at (255, 115) ════ -->
+
+  <!-- V centre -->
+  <circle cx="255" cy="115" r="20" fill="url(#vx)">
+    <animate attributeName="r" values="18;23;18" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="255" y="120" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">V</text>
+
+  <!-- Oxo O — directly above on y-axis, no overlap with anything -->
+  <line x1="255" y1="95" x2="255" y2="60" stroke="#ff7b72" stroke-width="3"/>
+  <!-- pulsing electron density along V=O bond -->
+  <circle r="3" fill="#ff7b72" opacity="0">
+    <animateMotion dur="0.85s" repeatCount="indefinite" path="M 255,90 L 255,62"/>
+    <animate attributeName="opacity" values="0;0.9;0" dur="0.85s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="255" cy="50" r="13" fill="url(#ox)"/>
+  <text x="255" y="55" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">O</text>
+  <text x="272" y="78" fill="#ff7b72" font-size="8">V=O  π</text>
+
+  <!-- N donor — upper-left -->
+  <line x1="238" y1="105" x2="190" y2="82" stroke="#58a6ff" stroke-width="2"/>
+  <circle cx="181" cy="77" r="12" fill="url(#nx)"/>
+  <text x="181" y="81" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">N</text>
+  <text x="168" y="67" fill="#58a6ff" font-size="8">SALIEP</text>
+
+  <!-- N donor — upper-right (symmetric) -->
+  <line x1="272" y1="105" x2="320" y2="82" stroke="#58a6ff" stroke-width="2"/>
+  <circle cx="329" cy="77" r="12" fill="url(#nx)"/>
+  <text x="329" y="81" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">N</text>
+
+  <!-- O donor — lower-left, well separated -->
+  <line x1="240" y1="130" x2="185" y2="162" stroke="#ff7b72" stroke-width="2"/>
+  <circle cx="176" cy="168" r="12" fill="url(#ox)"/>
+  <text x="176" y="172" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold">O</text>
+
+  <!-- S donor — lower-right, well separated -->
+  <line x1="270" y1="130" x2="323" y2="162" stroke="#e3b341" stroke-width="2"/>
+  <circle cx="332" cy="168" r="12" fill="url(#sx)"/>
+  <text x="332" y="172" text-anchor="middle" fill="#e3b341" font-size="10" font-weight="bold">S</text>
+  <text x="348" y="160" fill="#e3b341" font-size="8">DTP</text>
+
+  <!-- Bond legend (top-left, no overlap) -->
+  <rect x="8" y="55" width="100" height="58" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="58" y="69" text-anchor="middle" fill="#8b949e" font-size="8" font-weight="bold">Bond</text>
+  <line x1="16" y1="78" x2="34" y2="78" stroke="#ff7b72" stroke-width="2.5"/><text x="38" y="81" fill="#ff7b72" font-size="8">V=O (oxo)</text>
+  <line x1="16" y1="91" x2="34" y2="91" stroke="#58a6ff" stroke-width="2"/><text x="38" y="94" fill="#58a6ff" font-size="8">V−N (imine)</text>
+  <line x1="16" y1="104" x2="34" y2="104" stroke="#e3b341" stroke-width="2"/><text x="38" y="107" fill="#e3b341" font-size="8">V−S (thio)</text>
+
+  <!-- ── separator ── -->
+  <line x1="8" y1="200" x2="502" y2="200" stroke="#30363d" stroke-width="1"/>
+
+  <!-- ════ BOTTOM-LEFT: d orbital occupancy ════ -->
+  <text x="175" y="216" text-anchor="middle" fill="#d2a8ff" font-size="10" font-weight="bold">d-orbital occupancy</text>
+
+  <!-- 5 orbital boxes — labels centred above each box -->
+  <!-- dxy -->
+  <text x="30"  y="230" text-anchor="middle" fill="#8b949e" font-size="8">dxy</text>
+  <rect x="8"   y="234" width="44" height="36" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1.2"/>
+  <!-- dxz -->
+  <text x="82"  y="230" text-anchor="middle" fill="#8b949e" font-size="8">dxz</text>
+  <rect x="60"  y="234" width="44" height="36" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1.2"/>
+  <!-- dyz -->
+  <text x="134" y="230" text-anchor="middle" fill="#8b949e" font-size="8">dyz</text>
+  <rect x="112" y="234" width="44" height="36" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1.2"/>
+  <!-- dx2y2 -->
+  <text x="186" y="230" text-anchor="middle" fill="#8b949e" font-size="8">dx²y²</text>
+  <rect x="164" y="234" width="44" height="36" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1.2"/>
+  <!-- dz2 — highlighted, contains the single unpaired electron -->
+  <text x="249" y="230" text-anchor="middle" fill="#d2a8ff" font-size="8" font-weight="bold">dz²  ↑</text>
+  <rect x="216" y="234" width="64" height="36" rx="4" fill="#1a1535" stroke="#d2a8ff" stroke-width="2"/>
+  <!-- single spin-up arrow inside box: static line + polygon arrowhead, plus a glow pulse -->
+  <line x1="248" y1="262" x2="248" y2="242" stroke="#d2a8ff" stroke-width="2.5"/>
+  <polygon points="243,247 248,238 253,247" fill="#d2a8ff"/>
+  <!-- precession glow -->
+  <circle cx="248" cy="252" r="5" fill="#d2a8ff" opacity="0.3">
+    <animate attributeName="opacity" values="0.2;0.6;0.2" dur="1.8s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="4;8;4" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+
+  <text x="155" y="284" text-anchor="middle" fill="#8b949e" font-size="8">V(IV)  [Ar] 3d¹ — S = 1/2 → EPR at g≈1.97</text>
+
+  <!-- ════ BOTTOM-RIGHT: MO energy level diagram ════ -->
+  <text x="410" y="216" text-anchor="middle" fill="#e3b341" font-size="10" font-weight="bold">MO energy levels</text>
+
+  <!-- energy axis -->
+  <line x1="305" y1="290" x2="305" y2="218" stroke="#8b949e" stroke-width="1"/>
+  <polygon points="301,220 305,213 309,220" fill="#8b949e"/>
+  <text x="299" y="254" fill="#8b949e" font-size="8" transform="rotate(-90,299,254)">E</text>
+
+  <!-- LUMO (empty) -->
+  <line x1="320" y1="230" x2="490" y2="230" stroke="#ff7b72" stroke-width="2"/>
+  <text x="494" y="234" fill="#ff7b72" font-size="8">LUMO (dz²*)</text>
+
+  <!-- ΔE gap with bracket -->
+  <line x1="315" y1="232" x2="315" y2="252" stroke="#e3b341" stroke-width="1.5"/>
+  <line x1="315" y1="232" x2="319" y2="232" stroke="#e3b341" stroke-width="1.5"/>
+  <line x1="315" y1="254" x2="319" y2="254" stroke="#e3b341" stroke-width="1.5"/>
+  <text x="308" y="245" fill="#e3b341" font-size="9" font-weight="bold">ΔE</text>
+
+  <!-- HOMO (half-filled — the d¹ spin) -->
+  <line x1="320" y1="254" x2="490" y2="254" stroke="#d2a8ff" stroke-width="2"/>
+  <text x="494" y="258" fill="#d2a8ff" font-size="8">HOMO (dz²)</text>
+  <!-- spin-up arrow — static line + polygon -->
+  <line x1="405" y1="266" x2="405" y2="256" stroke="#d2a8ff" stroke-width="2.5"/>
+  <polygon points="401,260 405,253 409,260" fill="#d2a8ff"/>
+  <!-- glow pulse -->
+  <circle cx="405" cy="260" r="4" fill="#d2a8ff" opacity="0.3">
+    <animate attributeName="opacity" values="0.2;0.7;0.2" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- HOMO-1 (fully paired) -->
+  <line x1="320" y1="273" x2="490" y2="273" stroke="#58a6ff" stroke-width="1.5"/>
+  <text x="494" y="277" fill="#58a6ff" font-size="8">HOMO-1</text>
+  <!-- pair: one up, one down -->
+  <line x1="398" y1="283" x2="398" y2="275" stroke="#58a6ff" stroke-width="2"/>
+  <polygon points="394,279 398,272 402,279" fill="#58a6ff"/>
+  <line x1="412" y1="275" x2="412" y2="283" stroke="#58a6ff" stroke-width="2"/>
+  <polygon points="408,280 412,286 416,280" fill="#58a6ff"/>
+
+  <!-- core -->
+  <line x1="320" y1="290" x2="490" y2="290" stroke="#8b949e" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="494" y="294" fill="#8b949e" font-size="8">core σ</text>
+</svg>

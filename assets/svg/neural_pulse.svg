@@ -1,0 +1,85 @@
+<svg viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg" style="background:#0d1117;font-family:monospace">
+  <defs>
+    <filter id="glow"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <radialGradient id="node-lit" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#58a6ff"/><stop offset="100%" stop-color="#1f6feb" stop-opacity="0.1"/></radialGradient>
+    <radialGradient id="node-dim" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#30363d"/><stop offset="100%" stop-color="#0d1117"/></radialGradient>
+  </defs>
+  <text x="250" y="20" text-anchor="middle" fill="#58a6ff" font-size="13" font-weight="bold">Neural Activation Pulse</text>
+  <text x="250" y="34" text-anchor="middle" fill="#8b949e" font-size="10">Spiking neural network — feed-forward propagation</text>
+
+  <!-- Layer labels -->
+  <text x="60"  y="52" text-anchor="middle" fill="#8b949e" font-size="10">Input</text>
+  <text x="170" y="52" text-anchor="middle" fill="#8b949e" font-size="10">Hidden 1</text>
+  <text x="280" y="52" text-anchor="middle" fill="#8b949e" font-size="10">Hidden 2</text>
+  <text x="390" y="52" text-anchor="middle" fill="#8b949e" font-size="10">Hidden 3</text>
+  <text x="470" y="52" text-anchor="middle" fill="#8b949e" font-size="10">Output</text>
+
+  <!-- Layer 0 — Input (3 nodes) -->
+  <circle id="i0" cx="60" cy="85"  r="14" fill="url(#node-lit)" filter="url(#glow)"><animate attributeName="r" values="12;16;12" dur="1s" begin="0s" repeatCount="indefinite"/></circle>
+  <circle id="i1" cx="60" cy="135" r="14" fill="url(#node-lit)" filter="url(#glow)"><animate attributeName="r" values="12;16;12" dur="1s" begin="0.15s" repeatCount="indefinite"/></circle>
+  <circle id="i2" cx="60" cy="185" r="14" fill="url(#node-lit)" filter="url(#glow)"><animate attributeName="r" values="12;16;12" dur="1s" begin="0.3s" repeatCount="indefinite"/></circle>
+
+  <!-- Layer 1 — Hidden (4 nodes) -->
+  <circle cx="170" cy="75"  r="13" fill="url(#node-dim)"><animate attributeName="fill" values="url(#node-dim);url(#node-lit);url(#node-dim)" dur="1s" begin="0.4s" repeatCount="indefinite"/></circle>
+  <circle cx="170" cy="115" r="13" fill="url(#node-dim)"><animate attributeName="fill" values="url(#node-dim);url(#node-lit);url(#node-dim)" dur="1s" begin="0.55s" repeatCount="indefinite"/></circle>
+  <circle cx="170" cy="155" r="13" fill="url(#node-dim)"><animate attributeName="fill" values="url(#node-dim);url(#node-lit);url(#node-dim)" dur="1s" begin="0.7s" repeatCount="indefinite"/></circle>
+  <circle cx="170" cy="195" r="13" fill="url(#node-dim)"><animate attributeName="fill" values="url(#node-dim);url(#node-lit);url(#node-dim)" dur="1s" begin="0.85s" repeatCount="indefinite"/></circle>
+
+  <!-- Layer 2 — Hidden (4 nodes) -->
+  <circle cx="280" cy="75"  r="13" fill="url(#node-dim)"><animate attributeName="fill" values="url(#node-dim);url(#node-lit);url(#node-dim)" dur="1s" begin="0.9s" repeatCount="indefinite"/></circle>
+  <circle cx="280" cy="115" r="13" fill="url(#node-dim)"><animate attributeName="fill" values="url(#node-dim);url(#node-lit);url(#node-dim)" dur="1s" begin="1.05s" repeatCount="indefinite"/></circle>
+  <circle cx="280" cy="155" r="13" fill="url(#node-dim)"><animate attributeName="fill" values="url(#node-dim);url(#node-lit);url(#node-dim)" dur="1s" begin="1.2s" repeatCount="indefinite"/></circle>
+  <circle cx="280" cy="195" r="13" fill="url(#node-dim)"><animate attributeName="fill" values="url(#node-dim);url(#node-lit);url(#node-dim)" dur="1s" begin="1.35s" repeatCount="indefinite"/></circle>
+
+  <!-- Layer 3 — Hidden (3 nodes) -->
+  <circle cx="390" cy="95"  r="13" fill="url(#node-dim)"><animate attributeName="fill" values="url(#node-dim);url(#node-lit);url(#node-dim)" dur="1s" begin="1.5s" repeatCount="indefinite"/></circle>
+  <circle cx="390" cy="135" r="13" fill="url(#node-dim)"><animate attributeName="fill" values="url(#node-dim);url(#node-lit);url(#node-dim)" dur="1s" begin="1.65s" repeatCount="indefinite"/></circle>
+  <circle cx="390" cy="175" r="13" fill="url(#node-dim)"><animate attributeName="fill" values="url(#node-dim);url(#node-lit);url(#node-dim)" dur="1s" begin="1.8s" repeatCount="indefinite"/></circle>
+
+  <!-- Layer 4 — Output (2 nodes) -->
+  <circle cx="470" cy="115" r="14" fill="url(#node-dim)"><animate attributeName="fill" values="url(#node-dim);url(#node-lit);url(#node-dim)" dur="1s" begin="2s" repeatCount="indefinite"/><animate attributeName="r" values="12;17;12" dur="1s" begin="2s" repeatCount="indefinite"/></circle>
+  <circle cx="470" cy="155" r="14" fill="url(#node-dim)"><animate attributeName="fill" values="url(#node-dim);url(#node-lit);url(#node-dim)" dur="1s" begin="2.15s" repeatCount="indefinite"/><animate attributeName="r" values="12;17;12" dur="1s" begin="2.15s" repeatCount="indefinite"/></circle>
+
+  <!-- Connections — Input to H1 -->
+  <g stroke="#30363d" stroke-width="0.7" opacity="0.5">
+    <line x1="74" y1="85"  x2="157" y2="75"/>  <line x1="74" y1="85"  x2="157" y2="115"/>
+    <line x1="74" y1="85"  x2="157" y2="155"/> <line x1="74" y1="85"  x2="157" y2="195"/>
+    <line x1="74" y1="135" x2="157" y2="75"/>  <line x1="74" y1="135" x2="157" y2="115"/>
+    <line x1="74" y1="135" x2="157" y2="155"/> <line x1="74" y1="135" x2="157" y2="195"/>
+    <line x1="74" y1="185" x2="157" y2="75"/>  <line x1="74" y1="185" x2="157" y2="115"/>
+    <line x1="74" y1="185" x2="157" y2="155"/> <line x1="74" y1="185" x2="157" y2="195"/>
+  </g>
+  <!-- Connections H1 to H2 -->
+  <g stroke="#30363d" stroke-width="0.7" opacity="0.5">
+    <line x1="183" y1="75"  x2="267" y2="75"/>  <line x1="183" y1="75"  x2="267" y2="115"/>
+    <line x1="183" y1="75"  x2="267" y2="155"/> <line x1="183" y1="75"  x2="267" y2="195"/>
+    <line x1="183" y1="115" x2="267" y2="75"/>  <line x1="183" y1="115" x2="267" y2="115"/>
+    <line x1="183" y1="115" x2="267" y2="155"/> <line x1="183" y1="115" x2="267" y2="195"/>
+    <line x1="183" y1="155" x2="267" y2="75"/>  <line x1="183" y1="155" x2="267" y2="115"/>
+    <line x1="183" y1="155" x2="267" y2="155"/> <line x1="183" y1="155" x2="267" y2="195"/>
+    <line x1="183" y1="195" x2="267" y2="75"/>  <line x1="183" y1="195" x2="267" y2="115"/>
+    <line x1="183" y1="195" x2="267" y2="155"/> <line x1="183" y1="195" x2="267" y2="195"/>
+  </g>
+  <!-- Connections H2 to H3 -->
+  <g stroke="#30363d" stroke-width="0.7" opacity="0.5">
+    <line x1="293" y1="75"  x2="377" y2="95"/>  <line x1="293" y1="75"  x2="377" y2="135"/>  <line x1="293" y1="75"  x2="377" y2="175"/>
+    <line x1="293" y1="115" x2="377" y2="95"/>  <line x1="293" y1="115" x2="377" y2="135"/> <line x1="293" y1="115" x2="377" y2="175"/>
+    <line x1="293" y1="155" x2="377" y2="95"/>  <line x1="293" y1="155" x2="377" y2="135"/> <line x1="293" y1="155" x2="377" y2="175"/>
+    <line x1="293" y1="195" x2="377" y2="95"/>  <line x1="293" y1="195" x2="377" y2="135"/> <line x1="293" y1="195" x2="377" y2="175"/>
+  </g>
+  <!-- Connections H3 to Output -->
+  <g stroke="#30363d" stroke-width="0.7" opacity="0.5">
+    <line x1="403" y1="95"  x2="456" y2="115"/> <line x1="403" y1="95"  x2="456" y2="155"/>
+    <line x1="403" y1="135" x2="456" y2="115"/> <line x1="403" y1="135" x2="456" y2="155"/>
+    <line x1="403" y1="175" x2="456" y2="115"/> <line x1="403" y1="175" x2="456" y2="155"/>
+  </g>
+
+  <!-- Active pulse travelling across -->
+  <circle r="5" fill="#58a6ff" filter="url(#glow)">
+    <animateMotion dur="2.5s" repeatCount="indefinite" path="M60,135 L170,115 L280,75 L390,135 L470,115"/>
+  </circle>
+
+  <!-- output labels -->
+  <text x="488" y="119" fill="#56d364" font-size="9">Class A</text>
+  <text x="488" y="159" fill="#d2a8ff" font-size="9">Class B</text>
+</svg>

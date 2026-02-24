@@ -1,0 +1,41 @@
+<svg width="800" height="160" viewBox="0 0 800 160" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#58a6ff"/>
+      <stop offset="50%"  stop-color="#d2a8ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .title { font-family: 'Courier New', monospace; font-weight: bold; font-size: 42px; fill: url(#titleGrad); filter: url(#glow); }
+      .subtitle { font-family: 'Courier New', monospace; font-size: 15px; fill: #8b949e; }
+      .cursor { fill: #58a6ff; animation: blink 1s step-end infinite; }
+      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+      .dot { animation: orbit 4s linear infinite; transform-origin: 400px 80px; }
+      .dot2 { animation: orbit 6s linear infinite reverse; transform-origin: 400px 80px; }
+      @keyframes orbit { to { transform: rotate(360deg); } }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" fill="#0d1117"/>
+
+  <!-- Orbiting accent dots -->
+  <g class="dot"><circle cx="160" cy="80" r="3" fill="#58a6ff" opacity="0.7"/></g>
+  <g class="dot2"><circle cx="640" cy="80" r="3" fill="#d2a8ff" opacity="0.7"/></g>
+
+  <!-- Title -->
+  <text x="400" y="70" text-anchor="middle" class="title">Shuvam Banerji Seal</text>
+  <rect x="720" y="33" width="3" height="46" class="cursor"/>
+
+  <!-- Subtitle line 1 -->
+  <text x="400" y="100" text-anchor="middle" class="subtitle">BS-MS · Chemistry Major · Computer Science Minor · IISER Kolkata</text>
+  <!-- Subtitle line 2 -->
+  <text x="400" y="122" text-anchor="middle" class="subtitle">Computational Chemist  |  AI/ML Researcher  |  DeepTech Co-Founder</text>
+
+  <!-- Decorative line -->
+  <line x1="80" y1="138" x2="720" y2="138" stroke="#30363d" stroke-width="1"/>
+  <circle cx="80"  cy="138" r="3" fill="#58a6ff"/>
+  <circle cx="720" cy="138" r="3" fill="#d2a8ff"/>
+</svg>

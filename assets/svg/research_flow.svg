@@ -1,0 +1,63 @@
+<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg   { fill: #0d1117; }
+      .trk  { fill: none; stroke: #30363d; stroke-width: 2; }
+      .step { fill: #161b22; stroke: #30363d; stroke-width: 1.5; }
+      .step-active { fill: #1f2a3c; stroke: #58a6ff; stroke-width: 2; }
+      .lbl  { fill: #c9d1d9; font-family: monospace; font-size: 11px; text-anchor: middle; }
+      .sub  { fill: #8b949e; font-family: monospace; font-size: 9px;  text-anchor: middle; }
+      .marker { fill: #58a6ff; animation: moveMarker 4s cubic-bezier(.4,0,.6,1) infinite; }
+      @keyframes moveMarker {
+        0%   { cx: 68px; }
+        20%  { cx: 200px; }
+        40%  { cx: 332px; }
+        60%  { cx: 464px; }
+        80%  { cx: 596px; }
+        100% { cx: 728px; }
+      }
+      .glow-marker { filter: drop-shadow(0 0 6px #58a6ff); }
+      .title { fill: #c9d1d9; font-family: monospace; font-size: 13px; text-anchor: middle; }
+    </style>
+  </defs>
+  <rect width="100%" height="100%" class="bg" rx="10"/>
+
+  <!-- Track -->
+  <line x1="68" y1="95" x2="728" y2="95" class="trk"/>
+
+  <!-- Step boxes -->
+  <rect x="18"  y="65" width="100" height="60" rx="6" class="step-active"/>
+  <rect x="150" y="65" width="100" height="60" rx="6" class="step-active"/>
+  <rect x="282" y="65" width="100" height="60" rx="6" class="step-active"/>
+  <rect x="414" y="65" width="100" height="60" rx="6" class="step-active"/>
+  <rect x="546" y="65" width="100" height="60" rx="6" class="step-active"/>
+  <rect x="678" y="65" width="100" height="60" rx="6" class="step-active"/>
+
+  <!-- Step text -->
+  <text x="68"  y="89" class="lbl">Problem</text>
+  <text x="200" y="89" class="lbl">Literature</text>
+  <text x="332" y="89" class="lbl">Build</text>
+  <text x="464" y="89" class="lbl">Experiment</text>
+  <text x="596" y="89" class="lbl">Publish</text>
+  <text x="728" y="89" class="lbl">Impact</text>
+
+  <text x="68"  y="103" class="sub">Identify</text>
+  <text x="200" y="103" class="sub">Review</text>
+  <text x="332" y="103" class="sub">Prototype</text>
+  <text x="464" y="103" class="sub">Validate</text>
+  <text x="596" y="103" class="sub">ECIR/FIRE/TREC</text>
+  <text x="728" y="103" class="sub">Real-world</text>
+
+  <!-- Connector dots -->
+  <circle cx="68"  cy="95" r="5" fill="#58a6ff"/>
+  <circle cx="200" cy="95" r="5" fill="#58a6ff"/>
+  <circle cx="332" cy="95" r="5" fill="#58a6ff"/>
+  <circle cx="464" cy="95" r="5" fill="#58a6ff"/>
+  <circle cx="596" cy="95" r="5" fill="#58a6ff"/>
+  <circle cx="728" cy="95" r="5" fill="#58a6ff"/>
+
+  <!-- Animated marker -->
+  <circle cy="95" r="8" class="marker glow-marker" cx="68"/>
+
+  <text x="400" y="185" class="title">Research Workflow</text>
+</svg>

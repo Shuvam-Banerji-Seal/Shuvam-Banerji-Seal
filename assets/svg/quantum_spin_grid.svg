@@ -1,0 +1,124 @@
+<svg viewBox="0 0 440 305" xmlns="http://www.w3.org/2000/svg" style="background:#0d1117;font-family:monospace">
+  <!--
+    STORY: 2D Ising-model Monte Carlo simulation.
+    As temperature drops below Tc, thermal fluctuations decrease and spins
+    spontaneously align into ferromagnetic order (all ↑).
+    Each spin site shows two overlapping arrows (up=blue, down=red) whose
+    opacity alternates — simulating the stochastic flip of individual spins.
+    The magnetisation bar grows as more "up" phases dominate.
+  -->
+
+  <!-- ── Titles ── -->
+  <text x="220" y="18" text-anchor="middle" fill="#d2a8ff" font-size="12" font-weight="bold">2D Ising Spin Lattice — Monte Carlo</text>
+  <text x="220" y="31" text-anchor="middle" fill="#8b949e" font-size="9">Spins flip stochastically; below Tc they spontaneously align (↑ = blue, ↓ = red)</text>
+
+  <!-- ════ 7 × 4 spin grid ════
+       Each site: group at translate(cx,cy) containing UP arrow + DOWN arrow.
+       UP  arrow: vertical line pointing up + upward triangle arrowhead, blue.
+       DOWN arrow: vertical line pointing down + downward triangle, red.
+       Opacity animations alternate between them with random phase offsets.
+  -->
+
+  <!-- MACRO to avoid repetition: spin site centred at (cx,cy)
+       Ud = dur for up-state, Ud_beg = begin for up-state
+       Dd = dur for down-state (same as Ud), Dd_beg = begin offset (≈ Ud/2)
+  -->
+
+  <!-- Row 0  y=70 -->
+  <g transform="translate(48,70)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="3.1s" begin="0s" repeatCount="indefinite"/> </g>
+  <g transform="translate(48,70)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="3.1s" begin="0s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(104,70)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="2.8s" begin="0.35s" repeatCount="indefinite"/> </g>
+  <g transform="translate(104,70)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="2.8s" begin="0.35s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(160,70)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="3.5s" begin="0.7s" repeatCount="indefinite"/> </g>
+  <g transform="translate(160,70)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="3.5s" begin="0.7s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(216,70)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="2.6s" begin="0.9s" repeatCount="indefinite"/> </g>
+  <g transform="translate(216,70)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="2.6s" begin="0.9s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(272,70)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="3.2s" begin="0.5s" repeatCount="indefinite"/> </g>
+  <g transform="translate(272,70)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="3.2s" begin="0.5s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(328,70)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="2.9s" begin="1.1s" repeatCount="indefinite"/> </g>
+  <g transform="translate(328,70)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="2.9s" begin="1.1s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(384,70)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="3.4s" begin="0.25s" repeatCount="indefinite"/> </g>
+  <g transform="translate(384,70)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="3.4s" begin="0.25s" repeatCount="indefinite"/> </g>
+
+  <!-- Row 1  y=122 -->
+  <g transform="translate(48,122)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="3.3s" begin="0.8s" repeatCount="indefinite"/> </g>
+  <g transform="translate(48,122)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="3.3s" begin="0.8s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(104,122)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="2.5s" begin="0.4s" repeatCount="indefinite"/> </g>
+  <g transform="translate(104,122)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.4s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(160,122)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="3.7s" begin="1.2s" repeatCount="indefinite"/> </g>
+  <g transform="translate(160,122)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="3.7s" begin="1.2s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(216,122)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="2.9s" begin="0.6s" repeatCount="indefinite"/> </g>
+  <g transform="translate(216,122)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="2.9s" begin="0.6s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(272,122)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="3.1s" begin="1.5s" repeatCount="indefinite"/> </g>
+  <g transform="translate(272,122)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="3.1s" begin="1.5s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(328,122)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="2.7s" begin="0.3s" repeatCount="indefinite"/> </g>
+  <g transform="translate(328,122)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="2.7s" begin="0.3s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(384,122)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="3.6s" begin="1.8s" repeatCount="indefinite"/> </g>
+  <g transform="translate(384,122)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="3.6s" begin="1.8s" repeatCount="indefinite"/> </g>
+
+  <!-- Row 2  y=174 -->
+  <g transform="translate(48,174)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="3.2s" begin="1.3s" repeatCount="indefinite"/> </g>
+  <g transform="translate(48,174)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="3.2s" begin="1.3s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(104,174)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="2.6s" begin="0.9s" repeatCount="indefinite"/> </g>
+  <g transform="translate(104,174)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="2.6s" begin="0.9s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(160,174)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="3s" begin="0.5s" repeatCount="indefinite"/> </g>
+  <g transform="translate(160,174)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="3s" begin="0.5s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(216,174)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="3.4s" begin="1.7s" repeatCount="indefinite"/> </g>
+  <g transform="translate(216,174)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="3.4s" begin="1.7s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(272,174)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="2.5s" begin="0.2s" repeatCount="indefinite"/> </g>
+  <g transform="translate(272,174)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="2.5s" begin="0.2s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(328,174)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="3.8s" begin="1.0s" repeatCount="indefinite"/> </g>
+  <g transform="translate(328,174)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="3.8s" begin="1.0s" repeatCount="indefinite"/> </g>
+
+  <g transform="translate(384,174)"> <line x1="0" y1="13" x2="0" y2="-13" stroke="#58a6ff" stroke-width="2.5"/><polygon points="-5,-8 5,-8 0,-18" fill="#58a6ff"/> <animate attributeName="opacity" values="1;0;1" dur="2.9s" begin="1.6s" repeatCount="indefinite"/> </g>
+  <g transform="translate(384,174)" opacity="0"> <line x1="0" y1="-13" x2="0" y2="13" stroke="#ff7b72" stroke-width="2.5"/><polygon points="-5,8 5,8 0,18" fill="#ff7b72"/> <animate attributeName="opacity" values="0;1;0" dur="2.9s" begin="1.6s" repeatCount="indefinite"/> </g>
+
+  <!-- ════ Magnetisation bar ════ -->
+  <text x="14" y="212" fill="#8b949e" font-size="9" font-weight="bold">Net magnetisation  M:</text>
+
+  <!-- axis labels -->
+  <text x="14"  y="244" fill="#ff7b72" font-size="8">−1 (all ↓)</text>
+  <text x="182" y="244" text-anchor="middle" fill="#8b949e" font-size="8">0</text>
+  <text x="352" y="244" text-anchor="middle" fill="#58a6ff" font-size="8">+1 (all ↑)</text>
+
+  <!-- background track -->
+  <rect x="14" y="220" width="412" height="16" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1.2"/>
+  <!-- midpoint marker -->
+  <line x1="220" y1="218" x2="220" y2="238" stroke="#30363d" stroke-width="1"/>
+
+  <!-- animated M bar: grows from centre rightward = positive magnetisation growing -->
+  <rect x="220" y="220" width="1" height="16" rx="4" fill="#58a6ff" opacity="0.85">
+    <animate attributeName="width" values="1;110;160;110;50;160;190;160;90;160" dur="12s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- annotated temp label sweeping -->
+  <text x="14" y="260" fill="#8b949e" font-size="8">T &gt; Tc (disordered)</text>
+  <text x="426" y="260" text-anchor="end" fill="#58a6ff" font-size="8">T &lt; Tc — ordered ↑</text>
+
+  <text x="220" y="280" text-anchor="middle" fill="#e3b341" font-size="9" font-weight="bold">Phase transition at Tc —  k_BT_c ≈ 2.27 J  (exact for 2D Ising)</text>
+
+  <!-- legend -->
+  <line x1="14" y1="296" x2="30" y2="296" stroke="#58a6ff" stroke-width="2.5"/>
+  <polygon points="26,292 30,285 34,292" fill="#58a6ff"/>
+  <text x="38" y="299" fill="#58a6ff" font-size="8">spin ↑</text>
+  <line x1="90" y1="296" x2="106" y2="296" stroke="#ff7b72" stroke-width="2.5"/>
+  <polygon points="102,300 106,307 110,300" fill="#ff7b72"/>
+  <text x="114" y="299" fill="#ff7b72" font-size="8">spin ↓</text>
+</svg>

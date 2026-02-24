@@ -1,0 +1,90 @@
+<svg viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg" style="background:#0d1117;font-family:monospace">
+  <defs>
+    <radialGradient id="C-atom" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#8b949e"/><stop offset="100%" stop-color="#30363d" stop-opacity="0.5"/></radialGradient>
+    <radialGradient id="N-atom" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#58a6ff"/><stop offset="100%" stop-color="#1f6feb" stop-opacity="0.4"/></radialGradient>
+    <radialGradient id="O-atom" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff7b72"/><stop offset="100%" stop-color="#cf222e" stop-opacity="0.4"/></radialGradient>
+    <radialGradient id="H-atom" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f0f6fc"/><stop offset="70%" stop-color="#8b949e" stop-opacity="0.3"/></radialGradient>
+    <radialGradient id="V-grd" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#d2a8ff"/><stop offset="100%" stop-color="#6e40c9" stop-opacity="0.4"/></radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <text x="240" y="20" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">Molecular Dynamics — LAMMPS</text>
+  <text x="240" y="34" text-anchor="middle" fill="#8b949e" font-size="9">NVT ensemble, T=300K — [VO(SALIEP)(DTP)] in H₂O</text>
+
+  <!-- Water molecules background -->
+  <g opacity="0.3">
+    <circle cx="30" cy="80" r="6" fill="url(#O-atom)"/><circle cx="18" cy="70" r="3" fill="url(#H-atom)"/><circle cx="42" cy="70" r="3" fill="url(#H-atom)"/>
+    <circle cx="440" cy="100" r="6" fill="url(#O-atom)"/><circle cx="428" cy="90" r="3" fill="url(#H-atom)"/><circle cx="452" cy="90" r="3" fill="url(#H-atom)"/>
+    <circle cx="30" cy="200" r="6" fill="url(#O-atom)"/><circle cx="18" cy="190" r="3" fill="url(#H-atom)"/><circle cx="42" cy="190" r="3" fill="url(#H-atom)"/>
+    <circle cx="440" cy="200" r="6" fill="url(#O-atom)"/><circle cx="428" cy="190" r="3" fill="url(#H-atom)"/><circle cx="452" cy="190" r="3" fill="url(#H-atom)"/>
+  </g>
+
+  <!-- Central Vanadium complex -->
+  <g transform="translate(240,145)">
+    <!-- V center -->
+    <circle cx="0" cy="0" r="18" fill="url(#V-grd)" filter="url(#glow)">
+      <animate attributeName="r" values="16;20;16" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="0" y="5" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="bold">V</text>
+
+    <!-- Oxo oxygen (top) -->
+    <line x1="0" y1="-18" x2="0" y2="-48" stroke="#ff7b72" stroke-width="2.5"/>
+    <circle cx="0" cy="-55" r="10" fill="url(#O-atom)"/>
+    <text x="0" y="-51" text-anchor="middle" fill="#fff" font-size="9">O</text>
+    <!-- vibration -->
+    <animateTransform href="#oxo-group" attributeName="transform" type="translate" values="0,0;0,-4;0,0" dur="0.8s" additive="sum" repeatCount="indefinite"/>
+
+    <!-- N donor (right) -->
+    <line x1="18" y1="0" x2="52" y2="0" stroke="#56d364" stroke-width="2"/>
+    <circle cx="58" cy="0" r="9" fill="url(#N-atom)"/>
+    <text x="58" y="4" text-anchor="middle" fill="#fff" font-size="9">N</text>
+
+    <!-- N donor (left) -->
+    <line x1="-18" y1="0" x2="-52" y2="0" stroke="#56d364" stroke-width="2"/>
+    <circle cx="-58" cy="0" r="9" fill="url(#N-atom)"/>
+    <text x="-58" y="4" text-anchor="middle" fill="#fff" font-size="9">N</text>
+
+    <!-- O donor (bottom-left) -->
+    <line x1="-12" y1="14" x2="-38" y2="45" stroke="#e3b341" stroke-width="2"/>
+    <circle cx="-44" cy="52" r="9" fill="url(#O-atom)"/>
+    <text x="-44" y="56" text-anchor="middle" fill="#fff" font-size="9">O</text>
+
+    <!-- S donor (bottom-right) -->
+    <line x1="12" y1="14" x2="36" y2="45" stroke="#e3b341" stroke-width="2"/>
+    <circle cx="42" cy="52" r="9" fill="#3d2c00" stroke="#e3b341" stroke-width="1.5"/>
+    <text x="42" y="56" text-anchor="middle" fill="#e3b341" font-size="9">S</text>
+  </g>
+
+  <!-- Brownian motion water molecules (animated) -->
+  <g opacity="0.6">
+    <circle r="5" fill="url(#O-atom)">
+      <animateMotion dur="4s" repeatCount="indefinite" path="M80,60 Q100,80 90,100 Q70,120 80,140 Q100,160 80,180"/>
+    </circle>
+    <circle r="5" fill="url(#O-atom)">
+      <animateMotion dur="3.5s" repeatCount="indefinite" path="M380,70 Q360,90 370,110 Q390,130 370,150 Q350,170 370,190"/>
+    </circle>
+    <circle r="5" fill="url(#O-atom)">
+      <animateMotion dur="5s" repeatCount="indefinite" path="M140,50 Q160,70 150,100 Q130,130 155,155"/>
+    </circle>
+    <circle r="5" fill="url(#O-atom)">
+      <animateMotion dur="4.5s" repeatCount="indefinite" begin="2s" path="M340,220 Q320,200 330,170 Q350,145 330,120"/>
+    </circle>
+  </g>
+
+  <!-- Temperature indicator -->
+  <rect x="380" y="220" width="90" height="35" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="425" y="234" text-anchor="middle" fill="#8b949e" font-size="9">Thermostat</text>
+  <text x="425" y="248" text-anchor="middle" fill="#e3b341" font-size="11" font-weight="bold">T = 300 K</text>
+
+  <!-- RMSD label -->
+  <rect x="10" y="220" width="110" height="35" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="65" y="234" text-anchor="middle" fill="#8b949e" font-size="9">Backbone RMSD</text>
+  <text x="65" y="248" text-anchor="middle" fill="#56d364" font-size="11" font-weight="bold">1.2 Å</text>
+
+  <!-- Step box -->
+  <rect x="185" y="220" width="120" height="35" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="245" y="234" text-anchor="middle" fill="#8b949e" font-size="9">MD Steps</text>
+  <text x="245" y="248" text-anchor="middle" fill="#58a6ff" font-size="11" font-weight="bold">
+    <animate attributeName="textContent" values="0 fs;50 fs;100 fs;150 fs;200 fs;250 fs;300 fs;350 fs;400 fs" dur="4s" repeatCount="indefinite"/>
+    0 fs
+  </text>
+</svg>
