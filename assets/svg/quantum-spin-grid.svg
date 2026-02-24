@@ -1,0 +1,42 @@
+<svg width="960" height="280" viewBox="0 0 960 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Quantum spin lattice">
+  <defs>
+    <linearGradient id="bg6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#030712"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="280" fill="url(#bg6)"/>
+
+  <g stroke="#334155" stroke-width="1">
+    <line x1="130" y1="50" x2="830" y2="50"/>
+    <line x1="130" y1="110" x2="830" y2="110"/>
+    <line x1="130" y1="170" x2="830" y2="170"/>
+    <line x1="130" y1="230" x2="830" y2="230"/>
+    <line x1="130" y1="50" x2="130" y2="230"/>
+    <line x1="270" y1="50" x2="270" y2="230"/>
+    <line x1="410" y1="50" x2="410" y2="230"/>
+    <line x1="550" y1="50" x2="550" y2="230"/>
+    <line x1="690" y1="50" x2="690" y2="230"/>
+    <line x1="830" y1="50" x2="830" y2="230"/>
+  </g>
+
+  <g stroke="#e2e8f0" stroke-width="2.2" stroke-linecap="round">
+    <line x1="130" y1="50" x2="130" y2="30"><animate attributeName="y2" values="30;70;30" dur="2s" begin="0s" repeatCount="indefinite"/></line>
+    <line x1="270" y1="110" x2="270" y2="90"><animate attributeName="y2" values="130;90;130" dur="2.2s" begin="0.2s" repeatCount="indefinite"/></line>
+    <line x1="410" y1="170" x2="410" y2="150"><animate attributeName="y2" values="150;190;150" dur="1.9s" begin="0.1s" repeatCount="indefinite"/></line>
+    <line x1="550" y1="230" x2="550" y2="210"><animate attributeName="y2" values="250;210;250" dur="2.4s" begin="0.3s" repeatCount="indefinite"/></line>
+    <line x1="690" y1="110" x2="690" y2="90"><animate attributeName="y2" values="90;130;90" dur="2.1s" begin="0.4s" repeatCount="indefinite"/></line>
+    <line x1="830" y1="170" x2="830" y2="150"><animate attributeName="y2" values="150;190;150" dur="2.3s" begin="0.5s" repeatCount="indefinite"/></line>
+  </g>
+
+  <g fill="#38bdf8">
+    <circle cx="130" cy="50" r="6"/>
+    <circle cx="270" cy="110" r="6"/>
+    <circle cx="410" cy="170" r="6"/>
+    <circle cx="550" cy="230" r="6"/>
+    <circle cx="690" cy="110" r="6"/>
+    <circle cx="830" cy="170" r="6"/>
+  </g>
+
+  <text x="34" y="255" fill="#cbd5e1" font-family="monospace" font-size="18">Quantum Spin Lattice and State Flips</text>
+</svg>

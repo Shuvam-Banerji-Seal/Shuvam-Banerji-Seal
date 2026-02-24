@@ -1,0 +1,35 @@
+<svg width="960" height="280" viewBox="0 0 960 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Attention heads animation">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#172554"/>
+    </linearGradient>
+    <linearGradient id="arc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="280" fill="url(#bg4)"/>
+
+  <g fill="#e2e8f0" font-family="monospace" font-size="18">
+    <text x="60" y="150">Token A</text>
+    <text x="270" y="90">Token B</text>
+    <text x="500" y="170">Token C</text>
+    <text x="760" y="110">Token D</text>
+  </g>
+
+  <path d="M120 140 Q250 20 320 82" fill="none" stroke="url(#arc)" stroke-width="3" opacity="0.9">
+    <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M320 82 Q470 30 550 160" fill="none" stroke="#a78bfa" stroke-width="3" opacity="0.9">
+    <animate attributeName="stroke-opacity" values="0.2;1;0.2" dur="2.6s" repeatCount="indefinite"/>
+  </path>
+  <path d="M550 160 Q680 230 800 100" fill="none" stroke="#67e8f9" stroke-width="3" opacity="0.9">
+    <animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M120 140 Q460 260 800 100" fill="none" stroke="#34d399" stroke-width="2.5" opacity="0.7">
+    <animate attributeName="stroke-opacity" values="0.1;0.8;0.1" dur="3s" repeatCount="indefinite"/>
+  </path>
+
+  <text x="38" y="255" fill="#cbd5e1" font-family="monospace" font-size="18">Transformer Attention Flow</text>
+</svg>

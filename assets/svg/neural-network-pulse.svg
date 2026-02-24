@@ -1,0 +1,88 @@
+<svg width="960" height="280" viewBox="0 0 960 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Animated neural network">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#05070f"/>
+      <stop offset="100%" stop-color="#0f1a34"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#60a5fa" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="960" height="280" fill="url(#bg)"/>
+
+  <g stroke="#244070" stroke-width="1.2" opacity="0.85">
+    <line x1="110" y1="50" x2="330" y2="40"/>
+    <line x1="110" y1="50" x2="330" y2="95"/>
+    <line x1="110" y1="50" x2="330" y2="150"/>
+    <line x1="110" y1="50" x2="330" y2="205"/>
+
+    <line x1="110" y1="105" x2="330" y2="40"/>
+    <line x1="110" y1="105" x2="330" y2="95"/>
+    <line x1="110" y1="105" x2="330" y2="150"/>
+    <line x1="110" y1="105" x2="330" y2="205"/>
+
+    <line x1="110" y1="160" x2="330" y2="40"/>
+    <line x1="110" y1="160" x2="330" y2="95"/>
+    <line x1="110" y1="160" x2="330" y2="150"/>
+    <line x1="110" y1="160" x2="330" y2="205"/>
+
+    <line x1="110" y1="215" x2="330" y2="40"/>
+    <line x1="110" y1="215" x2="330" y2="95"/>
+    <line x1="110" y1="215" x2="330" y2="150"/>
+    <line x1="110" y1="215" x2="330" y2="205"/>
+
+    <line x1="330" y1="40" x2="560" y2="70"/>
+    <line x1="330" y1="40" x2="560" y2="140"/>
+    <line x1="330" y1="40" x2="560" y2="210"/>
+    <line x1="330" y1="95" x2="560" y2="70"/>
+    <line x1="330" y1="95" x2="560" y2="140"/>
+    <line x1="330" y1="95" x2="560" y2="210"/>
+    <line x1="330" y1="150" x2="560" y2="70"/>
+    <line x1="330" y1="150" x2="560" y2="140"/>
+    <line x1="330" y1="150" x2="560" y2="210"/>
+    <line x1="330" y1="205" x2="560" y2="70"/>
+    <line x1="330" y1="205" x2="560" y2="140"/>
+    <line x1="330" y1="205" x2="560" y2="210"/>
+
+    <line x1="560" y1="70" x2="810" y2="110"/>
+    <line x1="560" y1="140" x2="810" y2="110"/>
+    <line x1="560" y1="210" x2="810" y2="110"/>
+    <line x1="560" y1="70" x2="810" y2="170"/>
+    <line x1="560" y1="140" x2="810" y2="170"/>
+    <line x1="560" y1="210" x2="810" y2="170"/>
+  </g>
+
+  <g filter="url(#softGlow)">
+    <rect x="60" y="40" width="70" height="4" fill="url(#beam)">
+      <animate attributeName="x" values="60;820;60" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="y" values="40;165;40" dur="5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <g fill="#7dd3fc" stroke="#bae6fd" stroke-width="1.5">
+    <circle cx="110" cy="50" r="12"><animate attributeName="r" values="11;13;11" dur="2s" repeatCount="indefinite"/></circle>
+    <circle cx="110" cy="105" r="12"><animate attributeName="r" values="12;14;12" dur="2.3s" repeatCount="indefinite"/></circle>
+    <circle cx="110" cy="160" r="12"><animate attributeName="r" values="10;13;10" dur="1.9s" repeatCount="indefinite"/></circle>
+    <circle cx="110" cy="215" r="12"><animate attributeName="r" values="12;15;12" dur="2.5s" repeatCount="indefinite"/></circle>
+
+    <circle cx="330" cy="40" r="13" fill="#60a5fa"/>
+    <circle cx="330" cy="95" r="13" fill="#60a5fa"/>
+    <circle cx="330" cy="150" r="13" fill="#60a5fa"/>
+    <circle cx="330" cy="205" r="13" fill="#60a5fa"/>
+
+    <circle cx="560" cy="70" r="14" fill="#a78bfa"/>
+    <circle cx="560" cy="140" r="14" fill="#a78bfa"/>
+    <circle cx="560" cy="210" r="14" fill="#a78bfa"/>
+
+    <circle cx="810" cy="110" r="15" fill="#34d399"/>
+    <circle cx="810" cy="170" r="15" fill="#34d399"/>
+  </g>
+
+  <text x="36" y="255" fill="#93c5fd" font-family="monospace" font-size="18">Neural Signal Propagation</text>
+</svg>
