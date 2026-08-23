@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/svg/header_banner.svg" width="100%" alt="Shuvam Banerji Seal" />
+  <img src="assets/svg/header_banner.svg?v=2" width="100%" alt="Shuvam Banerji Seal — Computational Chemist and AI Researcher" />
 </p>
 
 <p align="center">
@@ -32,99 +32,84 @@ BS-MS student at **Indian Institute of Science Education and Research, Kolkata**
 
 ---
 
-## Research — Animated Overviews
+## Philosophy
 
-<p align="center">
-  <img src="assets/svg/dft_orbital.svg" width="49%" alt="DFT Molecular Orbital Animation" />
-  <img src="assets/svg/deep_nn.svg" width="49%" alt="Deep Neural Network Visualization" />
-</p>
+> **First principles, then force fields.** — Every simulation is an argument about reality. I compute to *test* the argument, not to decorate it. If the HOMO–LUMO gap disagrees with the experiment, the gap is not wrong — the model is.
 
-<p align="center">
-  <img src="assets/svg/rag_pipeline.svg" width="100%" alt="Hybrid RAG Pipeline — ECIR 2026 / FIRE 2025" />
-</p>
+> **Retrieval over memorisation.** — A model that cannot cite its sources is an opinion engine. Whether it is a language model or a spectroscopy reference, the answer must trace back to evidence.
 
-<p align="center">
-  <img src="assets/svg/research_flow.svg" width="65%" alt="Research Workflow" />
-  <img src="assets/svg/startups.svg" width="34%" alt="Startups — Synapse and UnderWater AI" />
-</p>
+> **Ship the negative result.** — The failed catalyst, the ablation that lost, the retrieval run that underperformed BM25 — these are data. Science compounds only when the null results are public.
 
 ---
 
-## Extended Visualizations
-
-<details>
-<summary>Attention Heads / Transformer Architecture</summary>
+## Research — Animated Overviews
 
 <p align="center">
-  <img src="assets/svg/attention_heads.svg" width="90%" alt="Multi-Head Self-Attention" />
+  <img src="assets/svg/dft_orbital.svg?v=2" width="100%" alt="DFT orbital visualisation — 1s, 2p and 3d orbitals with animated electrons" />
 </p>
-
-</details>
-
-<details>
-<summary>Molecular Orbital Spin Diagram — [VO(SALIEP)(DTP)]</summary>
 
 <p align="center">
-  <img src="assets/svg/chem_orbital_spin.svg" width="80%" alt="Chem Orbital Spin" />
+  <img src="assets/svg/deep_nn.svg?v=2" width="100%" alt="Deep neural network forward propagation with travelling signal pulses" />
 </p>
-
-</details>
-
-<details>
-<summary>Gradient Descent Loss Landscape</summary>
 
 <p align="center">
-  <img src="assets/svg/gradient_descent.svg" width="80%" alt="Gradient Descent" />
+  <img src="assets/svg/rag_pipeline.svg?v=2" width="100%" alt="Hybrid RAG pipeline — ECIR 2026 / FIRE 2025" />
 </p>
-
-</details>
-
-<details>
-<summary>Molecular Dynamics Simulation — LAMMPS</summary>
 
 <p align="center">
-  <img src="assets/svg/molecular_dynamics.svg" width="80%" alt="Molecular Dynamics" />
+  <img src="assets/svg/research_flow.svg?v=2" width="100%" alt="Research workflow — problem to impact" />
 </p>
-
-</details>
-
-<details>
-<summary>Neural Activation Pulse — Spiking NN</summary>
 
 <p align="center">
-  <img src="assets/svg/neural_pulse.svg" width="80%" alt="Neural Pulse" />
+  <img src="assets/svg/startups.svg?v=2" width="100%" alt="Startups — Synapse and UnderWater AI" />
 </p>
-
-</details>
-
-<details>
-<summary>Quantum Spin Grid — Ising Model</summary>
-
-<p align="center">
-  <img src="assets/svg/quantum_spin_grid.svg" width="80%" alt="Quantum Spin Grid" />
-</p>
-
-</details>
 
 ---
 
 ## Publications
 
+<p align="center">
+  <img src="assets/svg/publications_timeline.svg?v=2" width="100%" alt="Publication timeline 2024 to 2026" />
+</p>
+
 | Year | Venue | Title |
 |------|-------|-------|
-| 2026 | **ECIR 2026** (34.5% acceptance) | [AgriIR: A Scalable Framework for Domain-Specific Knowledge Retrieval](https://link.springer.com/ecir) |
+| 2026 | **ECIR 2026** (34.5% acceptance) | [AgriIR: A Scalable Framework for Domain-Specific Knowledge Retrieval](https://link.springer.com/conference/ecir) |
 | 2025 | **FIRE 2025** | [Hierarchical Opinion Classification using Large Language Models](https://fire.irsi.org.in/fire/2025/home) |
 | 2024 | **TREC 2024** (NIST) | [IISERK@ToT_2024: Query Reformulation and Layered Retrieval](https://trec.nist.gov/pubs/trec33/papers/IISER-K.tot.pdf) |
 | WIP  | To be submitted | Computational Modeling of [VO(SALIEP)(DTP)] as Water Reducing Catalyst (DFT/B3LYP) |
 
 ---
 
-## Entrepreneurial Ventures
+## Extended Visualizations
 
-| Startup | Domain | Grant | Status |
-|---------|--------|-------|--------|
-| **[Synapse](https://synapse-iiserk.github.io/)** | AI-Fintech — democratising ML for smart trading | MeitY GENESIS EiR | Funded; DPIIT Q1 2026 |
-| **UnderWater AI** | DeepTech — underwater vision for marine species ID | MeitY GENESIS EiR | Funded; DPIIT Q1 2026 |
+<details>
+<summary><b>Attention Heads / Transformer Architecture</b></summary>
+
+<p align="center">
+  <img src="assets/svg/attention_heads.svg?v=2" width="100%" alt="Multi-head self-attention" />
+</p>
+
+</details>
+
+<details>
+<summary><b>Molecular Orbital Spin Diagram — [VO(SALIEP)(DTP)]</b></summary>
+
+<p align="center">
+  <img src="assets/svg/chem_orbital_spin.svg?v=2" width="100%" alt="Chemical orbital spin and MO energy levels" />
+</p>
+
+</details>
+
+<p align="center">
+  <img src="assets/svg/gradient_descent.svg?v=2" width="49%" alt="Gradient descent loss landscape" />
+  <img src="assets/svg/molecular_dynamics.svg?v=2" width="49%" alt="Molecular dynamics simulation — LAMMPS" />
+</p>
+
+<p align="center">
+  <img src="assets/svg/neural_pulse.svg?v=2" width="49%" alt="Neural activation pulse — spiking network" />
+  <img src="assets/svg/quantum_spin_grid.svg?v=2" width="49%" alt="2D Ising spin lattice — Monte Carlo" />
+</p>
 
 ---
 
@@ -162,25 +147,155 @@ BS-MS student at **Indian Institute of Science Education and Research, Kolkata**
 
 ---
 
+## Interactive Lab — Synthesize the Catalyst from the DFT Study
+
+*Can you replicate the complex from the computational chemistry research? Choose wisely — wrong paths teach too.*
+
+<details>
+<summary><strong>Step 1 — Choose your central metal</strong></summary>
+
+> You need a redox-active transition metal capable of oxo-coordination for water reduction.
+
+- <details><summary>Select Vanadium (V)</summary>
+
+  Correct instinct. Vanadium(IV) oxo-complexes are known water-reduction catalysts — the d¹ electron gives you EPR handle too.
+
+  - <details><summary>Add Salen-type ligand (SALIEP)</summary>
+
+    SALIEP provides strong N/O donors that stabilise V(IV). Now choose the co-ligand.
+
+    - <details><summary>Add dithiophosphate (DTP)</summary>
+
+      **You built [VO(SALIEP)(DTP)]** — the exact target complex from the DFT/B3LYP study.
+      Run Gaussian with B3LYP/6-311G(d,p), compute MO energies, map the water-reduction pathway.
+      The V=O stretch should land near 965 cm⁻¹ — if it does, your geometry converged.
+    </details>
+    - <details><summary>Add bipyridine (bpy)</summary>
+
+      Interesting coordination — but bpy makes the complex too inert for proton-coupled electron transfer here. Swap in dithiophosphate (DTP).
+    </details>
+  </details>
+
+  - <details><summary>Add only H₂O as ligand</summary>
+
+    Water alone will not chelate stably — it exchanges too fast. Try a stronger donor like SALIEP.
+  </details>
+</details>
+
+- <details><summary>Select Iron (Fe)</summary>
+
+  Iron catalyses plenty of chemistry — but this specific DFT study uses Vanadium. Try again.
+</details>
+
+- <details><summary>Select Zinc (Zn)</summary>
+
+  d¹⁰ — diamagnetic, redox-silent. No unpaired electron, no EPR signal, no water reduction here. Pick a metal with available d-electrons.
+</details>
+
+</details>
+
+---
+
+## Interactive Lab — Build the Hybrid RAG Pipeline (ECIR 2026)
+
+*Design the retrieval architecture step by step — same decisions I made for the IISER-K intranet system.*
+
+<details>
+<summary><strong>Step 1 — Choose your retriever</strong></summary>
+
+- <details><summary>Dense retrieval only (vector embeddings)</summary>
+
+  Handles semantic similarity well, but misses exact keyword matches for rare technical terms. Upgrade?
+
+  - <details><summary>Add BM25 sparse retrieval in parallel</summary>
+
+    Now you have hybrid retrieval. How do you merge the two ranked lists?
+
+    - <details><summary>Reciprocal Rank Fusion (RRF)</summary>
+
+      **Perfect.** RRF combines ranked lists without score calibration. Add HyDE (hypothetical document embeddings) for query refinement and wrap in a Streamlit UI — you have replicated the ECIR 2026 / IISER-K intranet system.
+    </details>
+    - <details><summary>Weighted linear score combination</summary>
+
+      Works, but requires per-domain score calibration — brittle across corpora. RRF is more robust. Try again.
+    </details>
+  </details>
+</details>
+
+- <details><summary>BM25 sparse only</summary>
+
+  Fast and interpretable, but misses paraphrases. Upgrade to hybrid for better recall.
+</details>
+
+- <details><summary>Fine-tune a cross-encoder re-ranker on 50 labelled queries</summary>
+
+  Legitimate architecture — but with 50 labels you will overfit in an afternoon. Hybrid + RRF gets you further with zero labels. Try the label-free path first.
+</details>
+
+</details>
+
+---
+
+## Interactive Lab — Run the MD Simulation (LAMMPS)
+
+*Solvate the vanadium complex and keep it intact for 500 ns. Three choices, one stable trajectory.*
+
+<details>
+<summary><strong>Step 1 — Pick the ensemble</strong></summary>
+
+- <details><summary>NVT (fixed volume, thermostat only)</summary>
+
+  Stable and simple — but with fixed volume you cannot model the solvent density change as the complex relaxes. Fine for a first equilibration, though. Proceed.
+
+  - <details><summary>Thermostat: Nosé–Hoover</summary>
+
+    Smooth, deterministic, canonical ensemble. Now the integration timestep:
+
+    - <details><summary>2 fs with constrained bonds (SHAKE)</summary>
+
+      **Stable trajectory.** Constraints remove the fast X–H vibrations, 2 fs resolves the V=O stretch, and over 500 ns the RMSD plateaus near 1.2 Å — complex intact, no dissociation. This is the production setup.
+    </details>
+    - <details><summary>5 fs bare (no constraints)</summary>
+
+      Blown up. The O–H stretch oscillates at ~10 fs period — a 5 fs step integrates it as energy gain and your simulation detonates within picoseconds. Constrain bonds and drop to 2 fs.
+    </details>
+  </details>
+
+  - <details><summary>Thermostat: direct velocity rescaling every step</summary>
+
+    It will hold the temperature — but it distorts dynamics and gives wrong fluctuation statistics. Nosé–Hoover samples the canonical ensemble properly.
+  </details>
+</details>
+
+- <details><summary>NVE (no thermostat)</summary>
+
+  Pure Newtonian dynamics — beautiful, but any drift from the equilibrated state never gets corrected. Use NVT for production.
+</details>
+
+</details>
+
+---
+
 ## GitHub Stats
 
+> All stat services below are self-verifying: dead ones (github-readme-stats, trophy, contributor-stats) were removed in the v2 redesign — only endpoints verified alive are embedded.
+
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Shuvam-Banerji-Seal&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github" width="49%" alt="GitHub Stats"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Shuvam-Banerji-Seal&layout=compact&theme=radical&hide_border=true&langs_count=10" width="49%" alt="Top Languages"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Shuvam-Banerji-Seal&theme=radical" width="49%" alt="GitHub Stats"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Shuvam-Banerji-Seal&theme=radical" width="49%" alt="Repos per language"/>
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Shuvam-Banerji-Seal&theme=radical&hide_border=true" width="55%" alt="GitHub Streak"/>
-  <img src="https://github-profile-trophy.vercel.app/?username=Shuvam-Banerji-Seal&theme=radical&no-frame=true&no-bg=true&margin-w=4&column=3" width="44%" alt="Trophies"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Shuvam-Banerji-Seal&theme=radical" width="49%" alt="Most commit language"/>
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Shuvam-Banerji-Seal&theme=radical" width="49%" alt="Productive time"/>
+</p>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=Shuvam-Banerji-Seal&theme=radical&hide_border=true" width="55%" alt="GitHub Streak"/>
 </p>
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Shuvam-Banerji-Seal&theme=react-dark&custom_title=Contribution+Activity&hide_border=true&area=true" width="100%" alt="Activity Graph"/>
-</p>
-
-<p align="center">
-  <img src="https://github-contributor-stats.vercel.app/api?username=Shuvam-Banerji-Seal&limit=5&theme=radical&combine_all_yearly_contributions=true" width="55%" alt="Top Contributed Repos"/>
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Shuvam-Banerji-Seal&theme=radical" width="43%" alt="Productive Time"/>
 </p>
 
 ---
@@ -204,85 +319,6 @@ flowchart LR
     style I fill:#2d1f4a,stroke:#d2a8ff,color:#c9d1d9
     style J fill:#1f3a2d,stroke:#56d364,color:#c9d1d9
 ```
-
----
-
-## Interactive Lab — Synthesize the Catalyst from the DFT Study
-
-Can you replicate the complex from Shuvam's computational chemistry research? Step through the synthesis:
-
-<details>
-<summary><strong>Step 1 — Choose your central metal</strong></summary>
-
-> You need a redox-active transition metal capable of oxo-coordination for water reduction.
-
-- <details><summary>Select Vanadium (V)</summary>
-
-  Excellent choice. Vanadium(IV) oxo-complexes are known water-reduction catalysts.
-
-  - <details><summary>Add Salen-type ligand (SALIEP)</summary>
-
-    SALIEP provides strong N/O donors that stabilise V(IV). Now choose the co-ligand.
-
-    - <details><summary>Add dithiophosphate (DTP)</summary>
-
-      **You built [VO(SALIEP)(DTP)]** — the target complex from the DFT/B3LYP study.
-      Run Gaussian with the B3LYP functional to compute MO energies and map the water-reduction pathway.
-      Correct. This is exactly the compound Shuvam modelled computationally.
-    </details>
-    - <details><summary>Add bipyridine (bpy)</summary>
-
-      Interesting coordination, but different from the target. Try dithiophosphate (DTP).
-    </details>
-  </details>
-
-  - <details><summary>Add only H2O as ligand</summary>
-
-    Water alone does not form the stable complex needed. Try a stronger donor ligand like SALIEP.
-  </details>
-</details>
-
-- <details><summary>Select Iron (Fe)</summary>
-
-  Iron forms great catalysts in other systems, but this specific DFT study uses Vanadium. Try again.
-</details>
-
-</details>
-
----
-
-## Interactive Lab — Build the Hybrid RAG Pipeline (ECIR 2026)
-
-Design the retrieval architecture step by step:
-
-<details>
-<summary><strong>Step 1 — Choose your retriever</strong></summary>
-
-- <details><summary>Dense retrieval only (vector embeddings)</summary>
-
-  Handles semantic similarity well, but misses exact keyword matches for rare technical terms. Upgrade?
-
-  - <details><summary>Add BM25 sparse retrieval in parallel</summary>
-
-    Now you have hybrid retrieval. How do you merge the two ranked lists?
-
-    - <details><summary>Reciprocal Rank Fusion (RRF)</summary>
-
-      **Perfect.** RRF combines ranked lists without score calibration. Add HyDE (hypothetical document embeddings) for query refinement and wrap in a Streamlit UI — you have replicated the ECIR 2026 / IISER-K intranet system.
-    </details>
-    - <details><summary>Weighted linear score combination</summary>
-
-      Works, but requires per-domain calibration. RRF is more robust. Try again.
-    </details>
-  </details>
-</details>
-
-- <details><summary>BM25 sparse only</summary>
-
-  Fast and interpretable, but misses paraphrases. Upgrade to hybrid for better recall.
-</details>
-
-</details>
 
 ---
 

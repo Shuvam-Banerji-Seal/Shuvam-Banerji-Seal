@@ -1,63 +1,78 @@
-<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="170" viewBox="0 0 800 170" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Research workflow: problem, literature, build, experiment, publish, impact">
   <defs>
+    <filter id="rf-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
     <style>
-      .bg   { fill: #0d1117; }
-      .trk  { fill: none; stroke: #30363d; stroke-width: 2; }
-      .step { fill: #161b22; stroke: #30363d; stroke-width: 1.5; }
-      .step-active { fill: #1f2a3c; stroke: #58a6ff; stroke-width: 2; }
-      .lbl  { fill: #c9d1d9; font-family: monospace; font-size: 11px; text-anchor: middle; }
-      .sub  { fill: #8b949e; font-family: monospace; font-size: 9px;  text-anchor: middle; }
-      .marker { fill: #58a6ff; animation: moveMarker 4s cubic-bezier(.4,0,.6,1) infinite; }
-      @keyframes moveMarker {
-        0%   { cx: 68px; }
-        20%  { cx: 200px; }
-        40%  { cx: 332px; }
-        60%  { cx: 464px; }
-        80%  { cx: 596px; }
-        100% { cx: 728px; }
-      }
-      .glow-marker { filter: drop-shadow(0 0 6px #58a6ff); }
-      .title { fill: #c9d1d9; font-family: monospace; font-size: 13px; text-anchor: middle; }
+      .rf-title { fill:#c9d1d9; font-family:'Courier New',monospace; font-size:13.5px; font-weight:bold; }
+      .rf-sub   { fill:#8b949e; font-family:'Courier New',monospace; font-size:9.5px; }
+      .rf-lab   { fill:#c9d1d9; font-family:'Courier New',monospace; font-size:11px; font-weight:bold; text-anchor:middle; }
+      .rf-sublab{ fill:#8b949e; font-family:'Courier New',monospace; font-size:8.5px; text-anchor:middle; }
+      .rf-box   { fill:#161b22; stroke-width:1.6; }
     </style>
   </defs>
-  <rect width="100%" height="100%" class="bg" rx="10"/>
 
-  <!-- Track -->
-  <line x1="68" y1="95" x2="728" y2="95" class="trk"/>
+  <rect width="800" height="170" rx="12" fill="#0d1117"/>
+  <rect x="0.75" y="0.75" width="798.5" height="168.5" rx="11.5" fill="none" stroke="#30363d" stroke-width="1.5"/>
 
-  <!-- Step boxes -->
-  <rect x="18"  y="65" width="100" height="60" rx="6" class="step-active"/>
-  <rect x="150" y="65" width="100" height="60" rx="6" class="step-active"/>
-  <rect x="282" y="65" width="100" height="60" rx="6" class="step-active"/>
-  <rect x="414" y="65" width="100" height="60" rx="6" class="step-active"/>
-  <rect x="546" y="65" width="100" height="60" rx="6" class="step-active"/>
-  <rect x="678" y="65" width="100" height="60" rx="6" class="step-active"/>
+  <text x="400" y="23" text-anchor="middle" class="rf-title">RESEARCH WORKFLOW — FROM PROBLEM TO IMPACT</text>
+  <text x="400" y="37" text-anchor="middle" class="rf-sub">the loop never really terminates — every published answer seeds the next problem</text>
 
-  <!-- Step text -->
-  <text x="68"  y="89" class="lbl">Problem</text>
-  <text x="200" y="89" class="lbl">Literature</text>
-  <text x="332" y="89" class="lbl">Build</text>
-  <text x="464" y="89" class="lbl">Experiment</text>
-  <text x="596" y="89" class="lbl">Publish</text>
-  <text x="728" y="89" class="lbl">Impact</text>
+  <!-- track -->
+  <line x1="73" y1="93" x2="723" y2="93" stroke="#30363d" stroke-width="2"/>
 
-  <text x="68"  y="103" class="sub">Identify</text>
-  <text x="200" y="103" class="sub">Review</text>
-  <text x="332" y="103" class="sub">Prototype</text>
-  <text x="464" y="103" class="sub">Validate</text>
-  <text x="596" y="103" class="sub">ECIR/FIRE/TREC</text>
-  <text x="728" y="103" class="sub">Real-world</text>
+  <!-- stages -->
+  <rect x="18" y="66" width="110" height="52" rx="7" class="rf-box" stroke="#58a6ff">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5;0.5" keyTimes="0;0.08;0.16;1" dur="6s" begin="0s" repeatCount="indefinite"/>
+  </rect>
+  <text x="73" y="88" class="rf-lab" fill="#58a6ff">PROBLEM</text>
+  <text x="73" y="103" class="rf-sublab">identify the gap</text>
 
-  <!-- Connector dots -->
-  <circle cx="68"  cy="95" r="5" fill="#58a6ff"/>
-  <circle cx="200" cy="95" r="5" fill="#58a6ff"/>
-  <circle cx="332" cy="95" r="5" fill="#58a6ff"/>
-  <circle cx="464" cy="95" r="5" fill="#58a6ff"/>
-  <circle cx="596" cy="95" r="5" fill="#58a6ff"/>
-  <circle cx="728" cy="95" r="5" fill="#58a6ff"/>
+  <rect x="148" y="66" width="110" height="52" rx="7" class="rf-box" stroke="#d2a8ff">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5;0.5" keyTimes="0;0.08;0.16;1" dur="6s" begin="1s" repeatCount="indefinite"/>
+  </rect>
+  <text x="203" y="88" class="rf-lab" fill="#d2a8ff">LITERATURE</text>
+  <text x="203" y="103" class="rf-sublab">review · reproduce</text>
 
-  <!-- Animated marker -->
-  <circle cy="95" r="8" class="marker glow-marker" cx="68"/>
+  <rect x="278" y="66" width="110" height="52" rx="7" class="rf-box" stroke="#56d364">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5;0.5" keyTimes="0;0.08;0.16;1" dur="6s" begin="2s" repeatCount="indefinite"/>
+  </rect>
+  <text x="333" y="88" class="rf-lab" fill="#56d364">BUILD</text>
+  <text x="333" y="103" class="rf-sublab">dataset · baseline</text>
 
-  <text x="400" y="185" class="title">Research Workflow</text>
+  <rect x="408" y="66" width="110" height="52" rx="7" class="rf-box" stroke="#79c0ff">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5;0.5" keyTimes="0;0.08;0.16;1" dur="6s" begin="3s" repeatCount="indefinite"/>
+  </rect>
+  <text x="463" y="88" class="rf-lab" fill="#79c0ff">EXPERIMENT</text>
+  <text x="463" y="103" class="rf-sublab">ablate · validate</text>
+
+  <rect x="538" y="66" width="110" height="52" rx="7" class="rf-box" stroke="#e3b341">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5;0.5" keyTimes="0;0.08;0.16;1" dur="6s" begin="4s" repeatCount="indefinite"/>
+  </rect>
+  <text x="593" y="88" class="rf-lab" fill="#e3b341">PUBLISH</text>
+  <text x="593" y="103" class="rf-sublab">ECIR · FIRE · TREC</text>
+
+  <rect x="668" y="66" width="110" height="52" rx="7" class="rf-box" stroke="#ff7b72">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5;0.5" keyTimes="0;0.08;0.16;1" dur="6s" begin="5s" repeatCount="indefinite"/>
+  </rect>
+  <text x="723" y="88" class="rf-lab" fill="#ff7b72">IMPACT</text>
+  <text x="723" y="103" class="rf-sublab">open-source release</text>
+
+  <!-- connector dots -->
+  <g fill="#58a6ff">
+    <circle cx="73"  cy="93" r="4"/><circle cx="203" cy="93" r="4"/><circle cx="333" cy="93" r="4"/>
+    <circle cx="463" cy="93" r="4"/><circle cx="593" cy="93" r="4"/><circle cx="723" cy="93" r="4"/>
+  </g>
+
+  <!-- travelling marker with holds -->
+  <circle r="7" fill="#58a6ff" filter="url(#rf-glow)">
+    <animateMotion dur="6s" repeatCount="indefinite"
+      keyPoints="0;0;0.2;0.2;0.4;0.4;0.6;0.6;0.8;0.8;1;1"
+      keyTimes="0;0.13;0.2;0.3;0.37;0.47;0.54;0.64;0.71;0.81;0.88;1"
+      calcMode="linear"
+      path="M 73,93 L 203,93 L 333,93 L 463,93 L 593,93 L 723,93"/>
+  </circle>
+
+  <text x="400" y="152" text-anchor="middle" class="rf-sub">iterate — negative results are data too</text>
 </svg>

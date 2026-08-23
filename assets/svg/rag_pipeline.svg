@@ -1,111 +1,114 @@
-<svg width="800" height="280" viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="260" viewBox="0 0 800 260" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Hybrid RAG pipeline: documents to embeddings to hybrid retrieval to RRF fusion to LLM answer">
   <defs>
+    <filter id="rag-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
     <style>
-      .box { fill: #161b22; stroke: #30363d; stroke-width: 1.5; }
-      .box-active { fill: #1f2a3c; stroke: #58a6ff; stroke-width: 2; }
-      .label { fill: #c9d1d9; font-family: monospace; font-size: 11px; text-anchor: middle; }
-      .sublabel { fill: #8b949e; font-family: monospace; font-size: 9px; text-anchor: middle; }
-      .arrow-line { stroke: #58a6ff; stroke-width: 1.5; fill: none; stroke-dasharray: 6,3; }
-      .arrow-head { fill: #58a6ff; }
-      .packet { fill: #58a6ff; animation: travel1 2.5s ease-in-out infinite; opacity: 0; }
-      .packet2 { fill: #d2a8ff; animation: travel2 2.5s ease-in-out 0.8s infinite; opacity: 0; }
-      .packet3 { fill: #56d364; animation: travel3 2.5s ease-in-out 1.6s infinite; opacity: 0; }
-      @keyframes travel1 {
-        0%   { cx: 100px; opacity: 0; }
-        5%   { opacity: 1; }
-        45%  { cx: 300px; opacity: 1; }
-        50%  { cx: 300px; opacity: 1; }
-        90%  { cx: 490px; opacity: 1; }
-        95%  { opacity: 0; }
-        100% { cx: 490px; opacity: 0; }
-      }
-      @keyframes travel2 {
-        0%   { cx: 490px; opacity: 0; }
-        5%   { opacity: 1; }
-        45%  { cx: 600px; opacity: 1; }
-        50%  { cx: 600px; opacity: 1; }
-        90%  { cx: 700px; opacity: 1; }
-        95%  { opacity: 0; }
-        100% { cx: 700px; opacity: 0; }
-      }
-      @keyframes travel3 {
-        0%   { cx: 100px; opacity: 0; }
-        5%   { opacity: 1; }
-        90%  { cx: 700px; opacity: 1; }
-        95%  { opacity: 0; }
-        100% { cx: 700px; opacity: 0; }
-      }
-      .section-title { fill: #79c0ff; font-family: monospace; font-size: 10px; text-anchor: middle; font-weight: bold; }
-      .main-title { fill: #c9d1d9; font-family: monospace; font-size: 14px; text-anchor: middle; }
+      .rag-title { fill:#c9d1d9; font-family:'Courier New',monospace; font-size:14px; font-weight:bold; }
+      .rag-sub   { fill:#8b949e; font-family:'Courier New',monospace; font-size:9.5px; }
+      .rag-lab   { fill:#c9d1d9; font-family:'Courier New',monospace; font-size:10.5px; font-weight:bold; text-anchor:middle; }
+      .rag-sublab{ fill:#8b949e; font-family:'Courier New',monospace; font-size:8.5px; text-anchor:middle; }
+      .rag-sec   { fill:#79c0ff; font-family:'Courier New',monospace; font-size:8.5px; font-weight:bold; text-anchor:middle; letter-spacing:1px; }
+      .rag-arrow { stroke:#58a6ff; stroke-width:1.4; stroke-dasharray:5,4; opacity:0.55; fill:none; }
+      .rag-stage { fill:#161b22; stroke-width:1.6; }
     </style>
   </defs>
-  <rect width="100%" height="100%" fill="#0d1117" rx="12"/>
 
-  <!-- Stage 1: Documents -->
-  <rect x="20" y="60" width="130" height="60" rx="6" class="box-active"/>
-  <text x="85" y="85" class="label">Document Store</text>
-  <text x="85" y="100" class="sublabel">Selenium · OCR · PDF</text>
-  <text x="85" y="113" class="sublabel">PyMuPDF · EasyOCR</text>
+  <rect width="800" height="260" rx="12" fill="#0d1117"/>
+  <rect x="0.75" y="0.75" width="798.5" height="258.5" rx="11.5" fill="none" stroke="#30363d" stroke-width="1.5"/>
 
-  <!-- Stage 2: Chunking + Embeddings -->
-  <rect x="195" y="60" width="130" height="60" rx="6" class="box-active"/>
-  <text x="260" y="82" class="label">Chunking &amp;</text>
-  <text x="260" y="96" class="label">Embeddings</text>
-  <text x="260" y="113" class="sublabel">Qwen3-4B · FAISS</text>
+  <text x="400" y="24" text-anchor="middle" class="rag-title">HYBRID RAG PIPELINE — AGRIIR (ECIR 2026 · FIRE 2025)</text>
+  <text x="400" y="39" text-anchor="middle" class="rag-sub">query → hybrid retrieval → rank fusion → grounded generation with inline citations</text>
 
-  <!-- Stage 3: Hybrid Retrieval -->
-  <rect x="370" y="40" width="130" height="100" rx="6" class="box-active"/>
-  <text x="435" y="65" class="section-title">RETRIEVAL</text>
-  <text x="435" y="82" class="label">Dense Search</text>
-  <text x="435" y="95" class="sublabel">FAISS · Semantic</text>
-  <line x1="370" y1="108" x2="500" y2="108" stroke="#30363d" stroke-width="1" stroke-dasharray="4,2"/>
-  <text x="435" y="122" class="label">Sparse Search</text>
-  <text x="435" y="135" class="sublabel">BM25 · Keyword</text>
+  <!-- ══ stages ══ -->
+  <!-- 1 docs -->
+  <rect x="18" y="80" width="110" height="50" rx="7" class="rag-stage" stroke="#e3b341">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5;0.5" keyTimes="0;0.08;0.16;1" dur="6s" begin="0s" repeatCount="indefinite"/>
+  </rect>
+  <text x="73" y="101" class="rag-lab" fill="#e3b341">DOC STORE</text>
+  <text x="73" y="115" class="rag-sublab">OCR · PDF · crawl</text>
+  <text x="73" y="125" class="rag-sublab">PyMuPDF · EasyOCR</text>
 
-  <!-- Stage 4: RRF Fusion -->
-  <rect x="555" y="60" width="110" height="60" rx="6" class="box-active"/>
-  <text x="610" y="84" class="label">RRF Fusion</text>
-  <text x="610" y="99" class="sublabel">Reciprocal Rank</text>
-  <text x="610" y="113" class="sublabel">Fusion</text>
+  <!-- 2 chunk+embed -->
+  <rect x="148" y="80" width="110" height="50" rx="7" class="rag-stage" stroke="#d2a8ff">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5;0.5" keyTimes="0;0.08;0.16;1" dur="6s" begin="1.2s" repeatCount="indefinite"/>
+  </rect>
+  <text x="203" y="101" class="rag-lab" fill="#d2a8ff">EMBED</text>
+  <text x="203" y="115" class="rag-sublab">chunk 512 tok</text>
+  <text x="203" y="125" class="rag-sublab">Qwen3-4B · FAISS</text>
 
-  <!-- Stage 5: LLM Output -->
-  <rect x="720" y="40" width="60" height="100" rx="6" class="box-active"/>
-  <text x="750" y="80" class="label" style="font-size:10px">LLM</text>
-  <text x="750" y="95" class="sublabel">Gemma</text>
-  <text x="750" y="110" class="sublabel">3:27B</text>
-  <text x="750" y="130" class="sublabel">RAG</text>
+  <!-- 3 hybrid retrieval (tall) -->
+  <rect x="278" y="58" width="130" height="94" rx="7" class="rag-stage" stroke="#58a6ff">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5;0.5" keyTimes="0;0.08;0.16;1" dur="6s" begin="2.4s" repeatCount="indefinite"/>
+  </rect>
+  <text x="343" y="73" class="rag-sec">RETRIEVAL</text>
+  <text x="343" y="90" class="rag-lab" fill="#79c0ff" font-size="10">Dense</text>
+  <text x="343" y="101" class="rag-sublab">FAISS · semantic</text>
+  <line x1="286" y1="107" x2="400" y2="107" stroke="#30363d" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="343" y="121" class="rag-lab" fill="#56d364" font-size="10">Sparse</text>
+  <text x="343" y="132" class="rag-sublab">BM25 · keyword</text>
+  <text x="343" y="146" class="rag-sublab">parallel + HyDE</text>
 
-  <!-- Arrows -->
-  <line x1="150" y1="90" x2="192" y2="90" class="arrow-line"/>
-  <polygon points="188,86 196,90 188,94" class="arrow-head"/>
+  <!-- 4 RRF -->
+  <rect x="428" y="80" width="100" height="50" rx="7" class="rag-stage" stroke="#d2a8ff">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5;0.5" keyTimes="0;0.08;0.16;1" dur="6s" begin="3.6s" repeatCount="indefinite"/>
+  </rect>
+  <text x="478" y="101" class="rag-lab" fill="#d2a8ff">RRF</text>
+  <text x="478" y="115" class="rag-sublab">reciprocal rank</text>
+  <text x="478" y="125" class="rag-sublab">fusion · k=60</text>
 
-  <line x1="325" y1="90" x2="367" y2="90" class="arrow-line"/>
-  <polygon points="363,86 371,90 363,94" class="arrow-head"/>
+  <!-- 5 LLM -->
+  <rect x="548" y="80" width="100" height="50" rx="7" class="rag-stage" stroke="#ff7b72">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5;0.5" keyTimes="0;0.08;0.16;1" dur="6s" begin="4.8s" repeatCount="indefinite"/>
+  </rect>
+  <text x="598" y="101" class="rag-lab" fill="#ff7b72">LLM</text>
+  <text x="598" y="115" class="rag-sublab">Gemma 3 27B</text>
+  <text x="598" y="125" class="rag-sublab">grounded gen</text>
 
-  <!-- Two arrows from retrieval to fusion -->
-  <line x1="500" y1="78" x2="552" y2="78" class="arrow-line"/>
-  <polygon points="548,74 556,78 548,82" class="arrow-head"/>
-  <line x1="500" y1="122" x2="552" y2="102" class="arrow-line"/>
+  <!-- 6 answer -->
+  <rect x="668" y="80" width="114" height="50" rx="7" class="rag-stage" stroke="#56d364">
+    <animate attributeName="stroke-opacity" values="0.5;1;0.5;0.5" keyTimes="0;0.08;0.16;1" dur="6s" begin="6s" repeatCount="indefinite"/>
+  </rect>
+  <text x="725" y="101" class="rag-lab" fill="#56d364">ANSWER</text>
+  <text x="725" y="115" class="rag-sublab">inline citations</text>
+  <text x="725" y="125" class="rag-sublab">Streamlit UI</text>
 
-  <line x1="665" y1="90" x2="717" y2="90" class="arrow-line"/>
-  <polygon points="713,86 721,90 713,94" class="arrow-head"/>
+  <!-- ══ arrows ══ -->
+  <g class="rag-arrow">
+    <line x1="128" y1="105" x2="146" y2="105"/>
+    <line x1="258" y1="105" x2="276" y2="105"/>
+    <line x1="408" y1="90"  x2="426" y2="95"/>
+    <line x1="408" y1="125" x2="426" y2="115"/>
+    <line x1="528" y1="105" x2="546" y2="105"/>
+    <line x1="648" y1="105" x2="666" y2="105"/>
+  </g>
+  <g fill="#58a6ff" opacity="0.7">
+    <polygon points="146,101 154,105 146,109"/><polygon points="276,101 284,105 276,109"/>
+    <polygon points="426,92 434,96 425,99"/><polygon points="426,112 434,116 425,119"/>
+    <polygon points="546,101 554,105 546,109"/><polygon points="666,101 674,105 666,109"/>
+  </g>
 
-  <!-- Animated packets -->
-  <circle cy="90" r="5" class="packet" cx="100"/>
-  <circle cy="84" r="4" class="packet2" cx="490"/>
-  <circle cy="90" r="3" class="packet3" cx="100"/>
+  <!-- ══ travelling packet: visits every stage with holds (6s loop) ══ -->
+  <circle r="5" fill="#58a6ff" filter="url(#rag-glow)">
+    <animateMotion dur="6s" repeatCount="indefinite"
+      keyPoints="0;0;0.199;0.199;0.414;0.414;0.621;0.621;0.805;0.805;1;1"
+      keyTimes="0;0.12;0.2;0.32;0.4;0.52;0.6;0.72;0.8;0.9;0.98;1"
+      calcMode="linear"
+      path="M 73,105 L 203,105 L 343,105 L 478,105 L 598,105 L 725,105"/>
+  </circle>
+  <circle r="3" fill="#79c0ff" opacity="0.7">
+    <animateMotion dur="6s" begin="3s" repeatCount="indefinite"
+      keyPoints="0;0;0.199;0.199;0.414;0.414;0.621;0.621;0.805;0.805;1;1"
+      keyTimes="0;0.12;0.2;0.32;0.4;0.52;0.6;0.72;0.8;0.9;0.98;1"
+      calcMode="linear"
+      path="M 73,105 L 203,105 L 343,105 L 478,105 L 598,105 L 725,105"/>
+  </circle>
 
-  <!-- Labels below -->
-  <text x="85"  y="148" class="sublabel">Raw Sources</text>
-  <text x="260" y="148" class="sublabel">Vector DB</text>
-  <text x="435" y="165" class="sublabel">Parallel Retrieval</text>
-  <text x="610" y="148" class="sublabel">Re-ranking</text>
-  <text x="750" y="165" class="sublabel">Answer</text>
+  <!-- ══ bottom strip ══ -->
+  <rect x="18" y="172" width="764" height="56" rx="7" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="400" y="194" text-anchor="middle" class="rag-lab" font-size="11">HYBRID RETRIEVAL → VERIFIABLE ANSWERS WITH INLINE SOURCE CITATIONS</text>
+  <text x="400" y="212" text-anchor="middle" class="rag-sublab" font-size="9">HyDE hypothetical-document embeddings · query reformulation · domain-specific AgriIR corpus · IISER-K intranet deployment</text>
 
-  <!-- Citations note -->
-  <rect x="20" y="185" width="760" height="50" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
-  <text x="400" y="207" class="label">Hybrid RAG Pipeline → Verifiable Answers with Inline Source Citations</text>
-  <text x="400" y="225" class="sublabel">Query Refinement · HyDE (Hypothetical Document Embeddings) · Streamlit UI · IISER-K Intranet</text>
-
-  <text x="400" y="265" class="main-title">AgriIR / Hybrid RAG Architecture (ECIR 2026, FIRE 2025)</text>
+  <text x="400" y="248" text-anchor="middle" class="rag-sub">dense recall × sparse precision — fused without score calibration</text>
 </svg>

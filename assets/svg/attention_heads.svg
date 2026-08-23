@@ -1,123 +1,134 @@
-<svg viewBox="0 0 590 295" xmlns="http://www.w3.org/2000/svg" style="background:#0d1117;font-family:monospace">
+<svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Multi-head self-attention: query tokens attend through three specialist heads to key value tokens">
   <!--
-    STORY: Self-attention in AgriIR/RAG — "water reduction catalyst" query
-    attends to document tokens through 3 specialist heads simultaneously.
-    Solid pulsing lines show attention flow; score bars show weights.
-    Static polygon arrowheads (not marker-end on animated lines) stay visible.
+    STORY: self-attention in AgriIR/RAG — a chemistry query attends to document
+    tokens through 3 specialist heads simultaneously. Pulsing lines = attention
+    flow; animated bars = softmax weights.
   -->
+  <defs>
+    <style>
+      .ah-title { fill:#58a6ff; font-family:'Courier New',monospace; font-size:14px; font-weight:bold; }
+      .ah-sub   { fill:#8b949e; font-family:'Courier New',monospace; font-size:9.5px; }
+      .ah-h     { font-family:'Courier New',monospace; font-size:11px; font-weight:bold; text-anchor:middle; }
+      .ah-hsub  { fill:#8b949e; font-family:'Courier New',monospace; font-size:8.5px; text-anchor:middle; }
+      .ah-tok   { font-family:'Courier New',monospace; font-size:9.5px; text-anchor:middle; }
+      .ah-math  { fill:#8b949e; font-family:'Courier New',monospace; font-size:8px; text-anchor:middle; }
+      .ah-barbg { fill:#0d1117; }
+      .ah-concat{ fill:#1c2128; stroke:#58a6ff; stroke-width:1.6; }
+    </style>
+    <filter id="ah-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
 
-  <!-- ── Titles ── -->
-  <text x="295" y="18" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="bold">Multi-Head Self-Attention — AgriIR / RAG Pipeline</text>
-  <text x="295" y="31" text-anchor="middle" fill="#8b949e" font-size="9">Query "water reduction catalyst" → 3 parallel heads → context vector (ECIR 2026)</text>
+  <rect width="800" height="300" rx="12" fill="#0d1117"/>
+  <rect x="0.75" y="0.75" width="798.5" height="298.5" rx="11.5" fill="none" stroke="#30363d" stroke-width="1.5"/>
 
-  <!-- ══ Query tokens (left) ══ -->
-  <text x="52" y="53" text-anchor="middle" fill="#56d364" font-size="10" font-weight="bold">Query</text>
-  <rect x="10" y="60" width="84" height="22" rx="4" fill="#152515" stroke="#56d364" stroke-width="1.2"/>
-  <text x="52" y="75" text-anchor="middle" fill="#56d364" font-size="9">"water"</text>
-  <rect x="10" y="90" width="84" height="22" rx="4" fill="#152515" stroke="#56d364" stroke-width="1.2"/>
-  <text x="52" y="105" text-anchor="middle" fill="#56d364" font-size="9">"reduction"</text>
-  <rect x="10" y="120" width="84" height="22" rx="4" fill="#152515" stroke="#56d364" stroke-width="1.2"/>
-  <text x="52" y="135" text-anchor="middle" fill="#56d364" font-size="9">"catalyst"</text>
-  <rect x="10" y="150" width="84" height="22" rx="4" fill="#152515" stroke="#56d364" stroke-width="1.2"/>
-  <text x="52" y="165" text-anchor="middle" fill="#56d364" font-size="9">"DFT"</text>
+  <text x="400" y="22" text-anchor="middle" class="ah-title">MULTI-HEAD SELF-ATTENTION — AGRIIR RETRIEVAL</text>
+  <text x="400" y="36" text-anchor="middle" class="ah-sub">query "water reduction catalyst DFT" → 3 parallel heads → context vector (ECIR 2026)</text>
 
-  <!-- ══ Key/Value tokens (right) ══ -->
-  <text x="538" y="53" text-anchor="middle" fill="#e3b341" font-size="10" font-weight="bold">Key/Value</text>
-  <rect x="496" y="60" width="84" height="22" rx="4" fill="#251e05" stroke="#e3b341" stroke-width="1.2"/>
-  <text x="538" y="75" text-anchor="middle" fill="#e3b341" font-size="9">"VO complex"</text>
-  <rect x="496" y="90" width="84" height="22" rx="4" fill="#251e05" stroke="#e3b341" stroke-width="1.2"/>
-  <text x="538" y="105" text-anchor="middle" fill="#e3b341" font-size="9">"oxidation"</text>
-  <rect x="496" y="120" width="84" height="22" rx="4" fill="#251e05" stroke="#e3b341" stroke-width="1.2"/>
-  <text x="538" y="135" text-anchor="middle" fill="#e3b341" font-size="9">"SALIEP"</text>
-  <rect x="496" y="150" width="84" height="22" rx="4" fill="#251e05" stroke="#e3b341" stroke-width="1.2"/>
-  <text x="538" y="165" text-anchor="middle" fill="#e3b341" font-size="9">"B3LYP"</text>
+  <!-- ══ query tokens ══ -->
+  <text x="62" y="52" text-anchor="middle" fill="#56d364" font-family="monospace" font-size="10" font-weight="bold">QUERY</text>
+  <g>
+    <rect x="14" y="58"  width="96" height="24" rx="4" fill="#152515" stroke="#56d364" stroke-width="1.2"/>
+    <text x="62" y="74"  class="ah-tok" fill="#56d364">"water"</text>
+    <rect x="14" y="92"  width="96" height="24" rx="4" fill="#152515" stroke="#56d364" stroke-width="1.2"/>
+    <text x="62" y="108" class="ah-tok" fill="#56d364">"reduction"</text>
+    <rect x="14" y="126" width="96" height="24" rx="4" fill="#152515" stroke="#56d364" stroke-width="1.2"/>
+    <text x="62" y="142" class="ah-tok" fill="#56d364">"catalyst"</text>
+    <rect x="14" y="160" width="96" height="24" rx="4" fill="#152515" stroke="#56d364" stroke-width="1.2"/>
+    <text x="62" y="176" class="ah-tok" fill="#56d364">"DFT"</text>
+  </g>
 
-  <!-- ══ Head 1 — Semantic ══ -->
-  <rect x="130" y="56" width="88" height="148" rx="8" fill="#0b1826" stroke="#58a6ff" stroke-width="1.8"/>
-  <text x="174" y="74" text-anchor="middle" fill="#58a6ff" font-size="10" font-weight="bold">Head 1</text>
-  <text x="174" y="86" text-anchor="middle" fill="#8b949e" font-size="8">Semantic sim</text>
-  <rect x="140" y="94" width="68" height="10" rx="3" fill="#0d1117"/>
-  <rect x="140" y="94" width="55" height="10" rx="3" fill="#1f6feb"><animate attributeName="width" values="25;63;25" dur="2.4s" repeatCount="indefinite"/></rect>
-  <rect x="140" y="110" width="68" height="10" rx="3" fill="#0d1117"/>
-  <rect x="140" y="110" width="38" height="10" rx="3" fill="#1f6feb"><animate attributeName="width" values="58;22;58" dur="2.4s" repeatCount="indefinite"/></rect>
-  <rect x="140" y="126" width="68" height="10" rx="3" fill="#0d1117"/>
-  <rect x="140" y="126" width="52" height="10" rx="3" fill="#1f6feb"><animate attributeName="width" values="44;66;44" dur="2.6s" repeatCount="indefinite"/></rect>
-  <rect x="140" y="142" width="68" height="10" rx="3" fill="#0d1117"/>
-  <rect x="140" y="142" width="20" height="10" rx="3" fill="#1f6feb"><animate attributeName="width" values="14;52;14" dur="2.8s" repeatCount="indefinite"/></rect>
-  <text x="174" y="172" text-anchor="middle" fill="#8b949e" font-size="8">softmax(QKᵀ/√d)</text>
-  <text x="174" y="182" text-anchor="middle" fill="#8b949e" font-size="8">cosine space</text>
-  <text x="174" y="196" text-anchor="middle" fill="#58a6ff" font-size="8">score → V</text>
+  <!-- ══ key/value tokens ══ -->
+  <text x="738" y="52" text-anchor="middle" fill="#e3b341" font-family="monospace" font-size="10" font-weight="bold">KEY / VALUE</text>
+  <g>
+    <rect x="690" y="58"  width="96" height="24" rx="4" fill="#251e05" stroke="#e3b341" stroke-width="1.2"/>
+    <text x="738" y="74"  class="ah-tok" fill="#e3b341">"VO complex"</text>
+    <rect x="690" y="92"  width="96" height="24" rx="4" fill="#251e05" stroke="#e3b341" stroke-width="1.2"/>
+    <text x="738" y="108" class="ah-tok" fill="#e3b341">"oxidation"</text>
+    <rect x="690" y="126" width="96" height="24" rx="4" fill="#251e05" stroke="#e3b341" stroke-width="1.2"/>
+    <text x="738" y="142" class="ah-tok" fill="#e3b341">"SALIEP"</text>
+    <rect x="690" y="160" width="96" height="24" rx="4" fill="#251e05" stroke="#e3b341" stroke-width="1.2"/>
+    <text x="738" y="176" class="ah-tok" fill="#e3b341">"B3LYP"</text>
+  </g>
 
-  <!-- ══ Head 2 — Syntactic ══ -->
-  <rect x="248" y="56" width="88" height="148" rx="8" fill="#1a0b26" stroke="#d2a8ff" stroke-width="1.8"/>
-  <text x="292" y="74" text-anchor="middle" fill="#d2a8ff" font-size="10" font-weight="bold">Head 2</text>
-  <text x="292" y="86" text-anchor="middle" fill="#8b949e" font-size="8">Syntactic dep</text>
-  <rect x="258" y="94" width="68" height="10" rx="3" fill="#0d1117"/>
-  <rect x="258" y="94" width="48" height="10" rx="3" fill="#6e40c9"><animate attributeName="width" values="62;24;62" dur="3.2s" begin="0.4s" repeatCount="indefinite"/></rect>
-  <rect x="258" y="110" width="68" height="10" rx="3" fill="#0d1117"/>
-  <rect x="258" y="110" width="65" height="10" rx="3" fill="#6e40c9"><animate attributeName="width" values="18;66;18" dur="3s" begin="0.4s" repeatCount="indefinite"/></rect>
-  <rect x="258" y="126" width="68" height="10" rx="3" fill="#0d1117"/>
-  <rect x="258" y="126" width="34" height="10" rx="3" fill="#6e40c9"><animate attributeName="width" values="55;28;55" dur="2.8s" begin="0.6s" repeatCount="indefinite"/></rect>
-  <rect x="258" y="142" width="68" height="10" rx="3" fill="#0d1117"/>
-  <rect x="258" y="142" width="46" height="10" rx="3" fill="#6e40c9"><animate attributeName="width" values="40;60;40" dur="3.4s" begin="0.6s" repeatCount="indefinite"/></rect>
-  <text x="292" y="172" text-anchor="middle" fill="#8b949e" font-size="8">dependency</text>
-  <text x="292" y="182" text-anchor="middle" fill="#8b949e" font-size="8">parse heads</text>
-  <text x="292" y="196" text-anchor="middle" fill="#d2a8ff" font-size="8">score → V</text>
+  <!-- ══ head 1 — semantic ══ -->
+  <rect x="180" y="52" width="130" height="170" rx="8" fill="#0b1826" stroke="#58a6ff" stroke-width="1.8"/>
+  <text x="245" y="70" class="ah-h" fill="#58a6ff">HEAD 1</text>
+  <text x="245" y="82" class="ah-hsub">semantic similarity</text>
+  <rect x="192" y="92"  width="106" height="11" rx="3" class="ah-barbg"/>
+  <rect x="192" y="92"  width="80"  height="11" rx="3" fill="#1f6feb"><animate attributeName="width" values="38;98;38" dur="2.4s" repeatCount="indefinite"/></rect>
+  <rect x="192" y="109" width="106" height="11" rx="3" class="ah-barbg"/>
+  <rect x="192" y="109" width="55"  height="11" rx="3" fill="#1f6feb"><animate attributeName="width" values="90;30;90" dur="2.4s" repeatCount="indefinite"/></rect>
+  <rect x="192" y="126" width="106" height="11" rx="3" class="ah-barbg"/>
+  <rect x="192" y="126" width="75"  height="11" rx="3" fill="#1f6feb"><animate attributeName="width" values="60;100;60" dur="2.6s" repeatCount="indefinite"/></rect>
+  <rect x="192" y="143" width="106" height="11" rx="3" class="ah-barbg"/>
+  <rect x="192" y="143" width="30"  height="11" rx="3" fill="#1f6feb"><animate attributeName="width" values="20;78;20" dur="2.8s" repeatCount="indefinite"/></rect>
+  <text x="245" y="176" class="ah-math">softmax(QKᵀ/√d)</text>
+  <text x="245" y="187" class="ah-math">cosine space · FAISS</text>
+  <text x="245" y="202" class="ah-math" fill="#58a6ff">weights → V</text>
 
-  <!-- ══ Head 3 — Domain ══ -->
-  <rect x="366" y="56" width="88" height="148" rx="8" fill="#0b2615" stroke="#56d364" stroke-width="1.8"/>
-  <text x="410" y="74" text-anchor="middle" fill="#56d364" font-size="10" font-weight="bold">Head 3</text>
-  <text x="410" y="86" text-anchor="middle" fill="#8b949e" font-size="8">Domain match</text>
-  <rect x="376" y="94" width="68" height="10" rx="3" fill="#0d1117"/>
-  <rect x="376" y="94" width="36" height="10" rx="3" fill="#238636"><animate attributeName="width" values="52;32;52" dur="2.2s" begin="0.8s" repeatCount="indefinite"/></rect>
-  <rect x="376" y="110" width="68" height="10" rx="3" fill="#0d1117"/>
-  <rect x="376" y="110" width="60" height="10" rx="3" fill="#238636"><animate attributeName="width" values="22;64;22" dur="2.6s" begin="0.8s" repeatCount="indefinite"/></rect>
-  <rect x="376" y="126" width="68" height="10" rx="3" fill="#0d1117"/>
-  <rect x="376" y="126" width="68" height="10" rx="3" fill="#238636"><animate attributeName="width" values="65;38;65" dur="3s" begin="1s" repeatCount="indefinite"/></rect>
-  <rect x="376" y="142" width="68" height="10" rx="3" fill="#0d1117"/>
-  <rect x="376" y="142" width="28" height="10" rx="3" fill="#238636"><animate attributeName="width" values="18;58;18" dur="2.4s" begin="1s" repeatCount="indefinite"/></rect>
-  <text x="410" y="172" text-anchor="middle" fill="#8b949e" font-size="8">domain vocab</text>
-  <text x="410" y="182" text-anchor="middle" fill="#8b949e" font-size="8">+ BM25 terms</text>
-  <text x="410" y="196" text-anchor="middle" fill="#56d364" font-size="8">score → V</text>
+  <!-- ══ head 2 — syntactic ══ -->
+  <rect x="335" y="52" width="130" height="170" rx="8" fill="#1a0b26" stroke="#d2a8ff" stroke-width="1.8"/>
+  <text x="400" y="70" class="ah-h" fill="#d2a8ff">HEAD 2</text>
+  <text x="400" y="82" class="ah-hsub">syntactic deps</text>
+  <rect x="347" y="92"  width="106" height="11" rx="3" class="ah-barbg"/>
+  <rect x="347" y="92"  width="70"  height="11" rx="3" fill="#6e40c9"><animate attributeName="width" values="96;36;96" dur="3.2s" begin="0.4s" repeatCount="indefinite"/></rect>
+  <rect x="347" y="109" width="106" height="11" rx="3" class="ah-barbg"/>
+  <rect x="347" y="109" width="95"  height="11" rx="3" fill="#6e40c9"><animate attributeName="width" values="26;100;26" dur="3s" begin="0.4s" repeatCount="indefinite"/></rect>
+  <rect x="347" y="126" width="106" height="11" rx="3" class="ah-barbg"/>
+  <rect x="347" y="126" width="48"  height="11" rx="3" fill="#6e40c9"><animate attributeName="width" values="82;40;82" dur="2.8s" begin="0.6s" repeatCount="indefinite"/></rect>
+  <rect x="347" y="143" width="106" height="11" rx="3" class="ah-barbg"/>
+  <rect x="347" y="143" width="66"  height="11" rx="3" fill="#6e40c9"><animate attributeName="width" values="56;88;56" dur="3.4s" begin="0.6s" repeatCount="indefinite"/></rect>
+  <text x="400" y="176" class="ah-math">dependency parse</text>
+  <text x="400" y="187" class="ah-math">head→child relations</text>
+  <text x="400" y="202" class="ah-math" fill="#d2a8ff">weights → V</text>
 
-  <!-- ══ Animated connection lines — Q → heads
-       Solid lines with opacity pulse; separate polygon arrowheads ══ -->
-  <!-- Q → Head1 (mid token y=112) -->
-  <line x1="94" y1="112" x2="130" y2="117" stroke="#56d364" stroke-width="1.5" opacity="0.5"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="0.9s" repeatCount="indefinite"/></line>
-  <polygon points="127,113 133,119 126,121" fill="#56d364" opacity="0.8"/>
-  <!-- Q → Head2 -->
-  <line x1="94" y1="112" x2="248" y2="117" stroke="#56d364" stroke-width="1.5" opacity="0.5"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="0.9s" begin="0.25s" repeatCount="indefinite"/></line>
-  <polygon points="244,113 250,119 243,121" fill="#56d364" opacity="0.8"/>
-  <!-- Q → Head3 -->
-  <line x1="94" y1="112" x2="366" y2="117" stroke="#56d364" stroke-width="1.5" opacity="0.5"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="0.9s" begin="0.5s" repeatCount="indefinite"/></line>
-  <polygon points="362,113 368,119 361,121" fill="#56d364" opacity="0.8"/>
+  <!-- ══ head 3 — domain ══ -->
+  <rect x="490" y="52" width="130" height="170" rx="8" fill="#0b2615" stroke="#56d364" stroke-width="1.8"/>
+  <text x="555" y="70" class="ah-h" fill="#56d364">HEAD 3</text>
+  <text x="555" y="82" class="ah-hsub">domain match</text>
+  <rect x="502" y="92"  width="106" height="11" rx="3" class="ah-barbg"/>
+  <rect x="502" y="92"  width="52"  height="11" rx="3" fill="#238636"><animate attributeName="width" values="78;46;78" dur="2.2s" begin="0.8s" repeatCount="indefinite"/></rect>
+  <rect x="502" y="109" width="106" height="11" rx="3" class="ah-barbg"/>
+  <rect x="502" y="109" width="88"  height="11" rx="3" fill="#238636"><animate attributeName="width" values="32;96;32" dur="2.6s" begin="0.8s" repeatCount="indefinite"/></rect>
+  <rect x="502" y="126" width="106" height="11" rx="3" class="ah-barbg"/>
+  <rect x="502" y="126" width="100" height="11" rx="3" fill="#238636"><animate attributeName="width" values="96;56;96" dur="3s" begin="1s" repeatCount="indefinite"/></rect>
+  <rect x="502" y="143" width="106" height="11" rx="3" class="ah-barbg"/>
+  <rect x="502" y="143" width="40"  height="11" rx="3" fill="#238636"><animate attributeName="width" values="26;84;26" dur="2.4s" begin="1s" repeatCount="indefinite"/></rect>
+  <text x="555" y="176" class="ah-math">chemistry vocab</text>
+  <text x="555" y="187" class="ah-math">+ BM25 term overlap</text>
+  <text x="555" y="202" class="ah-math" fill="#56d364">weights → V</text>
 
-  <!-- ══ KV → heads ══ -->
-  <!-- KV → Head3 -->
-  <line x1="496" y1="112" x2="454" y2="117" stroke="#e3b341" stroke-width="1.5" opacity="0.5"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="0.9s" repeatCount="indefinite"/></line>
-  <polygon points="458,113 452,119 459,121" fill="#e3b341" opacity="0.8"/>
-  <!-- KV → Head2 -->
-  <line x1="496" y1="112" x2="336" y2="117" stroke="#e3b341" stroke-width="1.5" opacity="0.5"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="0.9s" begin="0.25s" repeatCount="indefinite"/></line>
-  <polygon points="340,113 334,119 341,121" fill="#e3b341" opacity="0.8"/>
-  <!-- KV → Head1 -->
-  <line x1="496" y1="112" x2="218" y2="117" stroke="#e3b341" stroke-width="1.5" opacity="0.5"><animate attributeName="opacity" values="0.3;0.9;0.3" dur="0.9s" begin="0.5s" repeatCount="indefinite"/></line>
-  <polygon points="222,113 216,119 223,121" fill="#e3b341" opacity="0.8"/>
+  <!-- ══ Q → head flow lines ══ -->
+  <g filter="url(#ah-glow)">
+    <line x1="110" y1="130" x2="180" y2="130" stroke="#56d364" stroke-width="1.6"><animate attributeName="opacity" values="0.25;0.95;0.25" dur="0.9s" repeatCount="indefinite"/></line>
+    <line x1="110" y1="130" x2="335" y2="130" stroke="#56d364" stroke-width="1.6"><animate attributeName="opacity" values="0.25;0.95;0.25" dur="0.9s" begin="0.25s" repeatCount="indefinite"/></line>
+    <line x1="110" y1="130" x2="490" y2="130" stroke="#56d364" stroke-width="1.6"><animate attributeName="opacity" values="0.25;0.95;0.25" dur="0.9s" begin="0.5s" repeatCount="indefinite"/></line>
+    <line x1="690" y1="130" x2="620" y2="130" stroke="#e3b341" stroke-width="1.6"><animate attributeName="opacity" values="0.25;0.95;0.25" dur="0.9s" repeatCount="indefinite"/></line>
+    <line x1="690" y1="130" x2="465" y2="130" stroke="#e3b341" stroke-width="1.6"><animate attributeName="opacity" values="0.25;0.95;0.25" dur="0.9s" begin="0.25s" repeatCount="indefinite"/></line>
+    <line x1="690" y1="130" x2="310" y2="130" stroke="#e3b341" stroke-width="1.6"><animate attributeName="opacity" values="0.25;0.95;0.25" dur="0.9s" begin="0.5s" repeatCount="indefinite"/></line>
+  </g>
+  <g fill="#56d364" opacity="0.85">
+    <polygon points="176,126 184,130 176,134"/><polygon points="331,126 339,130 331,134"/><polygon points="486,126 494,130 486,134"/>
+  </g>
+  <g fill="#e3b341" opacity="0.85">
+    <polygon points="624,126 616,130 624,134"/><polygon points="469,126 461,130 469,134"/><polygon points="314,126 306,130 314,134"/>
+  </g>
 
-  <!-- ══ Concat + Linear box ══ -->
-  <rect x="130" y="222" width="324" height="36" rx="6" fill="#1c2128" stroke="#58a6ff" stroke-width="1.8"/>
-  <text x="292" y="238" text-anchor="middle" fill="#c9d1d9" font-size="10" font-weight="bold">Concat [ h₁ ; h₂ ; h₃ ]  +  Linear W₀ → context</text>
-  <text x="292" y="251" text-anchor="middle" fill="#8b949e" font-size="8">d_model = 512 — fed to feed-forward + residual layer</text>
+  <!-- ══ concat + linear ══ -->
+  <rect x="180" y="242" width="440" height="34" rx="6" class="ah-concat"/>
+  <text x="400" y="256" text-anchor="middle" fill="#c9d1d9" font-family="monospace" font-size="10.5" font-weight="bold">CONCAT [ h1 ; h2 ; h3 ] + LINEAR W₀ → CONTEXT</text>
+  <text x="400" y="269" text-anchor="middle" class="ah-math">d_model = 512 → feed-forward + residual</text>
+  <g>
+    <line x1="245" y1="222" x2="245" y2="242" stroke="#58a6ff" stroke-width="1.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="0.9s" repeatCount="indefinite"/></line>
+    <polygon points="241,240 245,246 249,240" fill="#58a6ff"><animate attributeName="opacity" values="0.3;1;0.3" dur="0.9s" repeatCount="indefinite"/></polygon>
+    <line x1="400" y1="222" x2="400" y2="242" stroke="#58a6ff" stroke-width="1.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="0.9s" begin="0.2s" repeatCount="indefinite"/></line>
+    <polygon points="396,240 400,246 404,240" fill="#58a6ff"><animate attributeName="opacity" values="0.3;1;0.3" dur="0.9s" begin="0.2s" repeatCount="indefinite"/></polygon>
+    <line x1="555" y1="222" x2="555" y2="242" stroke="#58a6ff" stroke-width="1.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="0.9s" begin="0.4s" repeatCount="indefinite"/></line>
+    <polygon points="551,240 555,246 559,240" fill="#58a6ff"><animate attributeName="opacity" values="0.3;1;0.3" dur="0.9s" begin="0.4s" repeatCount="indefinite"/></polygon>
+  </g>
 
-  <!-- head → concat down arrows (opacity pulse) -->
-  <line x1="174" y1="204" x2="174" y2="222" stroke="#58a6ff" stroke-width="1.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="0.9s" repeatCount="indefinite"/></line>
-  <polygon points="170,220 174,225 178,220" fill="#58a6ff"><animate attributeName="opacity" values="0.3;1;0.3" dur="0.9s" repeatCount="indefinite"/></polygon>
-  <line x1="292" y1="204" x2="292" y2="222" stroke="#58a6ff" stroke-width="1.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="0.9s" begin="0.2s" repeatCount="indefinite"/></line>
-  <polygon points="288,220 292,225 296,220" fill="#58a6ff"><animate attributeName="opacity" values="0.3;1;0.3" dur="0.9s" begin="0.2s" repeatCount="indefinite"/></polygon>
-  <line x1="410" y1="204" x2="410" y2="222" stroke="#58a6ff" stroke-width="1.5"><animate attributeName="opacity" values="0.3;1;0.3" dur="0.9s" begin="0.4s" repeatCount="indefinite"/></line>
-  <polygon points="406,220 410,225 414,220" fill="#58a6ff"><animate attributeName="opacity" values="0.3;1;0.3" dur="0.9s" begin="0.4s" repeatCount="indefinite"/></polygon>
-
-  <!-- output arrow -->
-  <line x1="292" y1="258" x2="292" y2="276" stroke="#58a6ff" stroke-width="1.5"><animate attributeName="opacity" values="0.4;1;0.4" dur="1.1s" repeatCount="indefinite"/></line>
-  <polygon points="288,274 292,280 296,274" fill="#58a6ff"/>
-  <text x="292" y="291" text-anchor="middle" fill="#58a6ff" font-size="9">Context vector → next Transformer layer / decoder LLM</text>
+  <text x="400" y="292" text-anchor="middle" fill="#58a6ff" font-family="monospace" font-size="9">context vector → next transformer layer / decoder LLM</text>
 </svg>

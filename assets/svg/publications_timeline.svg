@@ -1,0 +1,85 @@
+<svg width="800" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-label="Publication timeline from TREC 2024 to ECIR 2026 with a DFT paper in progress">
+  <defs>
+    <linearGradient id="pt-axis" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.15"/>
+      <stop offset="50%" stop-color="#58a6ff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#d2a8ff" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="pt-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .pt-title { fill:#c9d1d9; font-family:'Courier New',monospace; font-size:13.5px; font-weight:bold; }
+      .pt-sub   { fill:#8b949e; font-family:'Courier New',monospace; font-size:9.5px; }
+      .pt-venue { font-family:'Courier New',monospace; font-size:11px; font-weight:bold; text-anchor:middle; }
+      .pt-paper { fill:#c9d1d9; font-family:'Courier New',monospace; font-size:8.5px; text-anchor:middle; }
+      .pt-year  { fill:#8b949e; font-family:'Courier New',monospace; font-size:9px; text-anchor:middle; }
+      .pt-card  { fill:#161b22; stroke-width:1.4; }
+    </style>
+  </defs>
+
+  <rect width="800" height="200" rx="12" fill="#0d1117"/>
+  <rect x="0.75" y="0.75" width="798.5" height="198.5" rx="11.5" fill="none" stroke="#30363d" stroke-width="1.5"/>
+
+  <text x="400" y="24" text-anchor="middle" class="pt-title">PUBLICATION TIMELINE — 2024 → 2026</text>
+  <text x="400" y="39" text-anchor="middle" class="pt-sub">information retrieval × computational chemistry — two tracks, one method: compute rigorously, publish openly</text>
+
+  <!-- axis -->
+  <line x1="60" y1="120" x2="740" y2="120" stroke="url(#pt-axis)" stroke-width="2.5"/>
+  <polygon points="740,115 750,120 740,125" fill="#d2a8ff"/>
+  <!-- year ticks -->
+  <text x="140" y="188" class="pt-year">2024</text>
+  <text x="320" y="188" class="pt-year">2025</text>
+  <text x="500" y="188" class="pt-year">2026</text>
+  <text x="680" y="188" class="pt-year">now</text>
+
+  <!-- travelling shimmer -->
+  <circle r="3" fill="#79c0ff" opacity="0.6" filter="url(#pt-glow)">
+    <animateMotion dur="7s" repeatCount="indefinite" path="M 60,120 L 740,120"/>
+  </circle>
+
+  <!-- ══ TREC 2024 (above) ══ -->
+  <rect x="62" y="52" width="156" height="44" rx="6" class="pt-card" stroke="#58a6ff"/>
+  <text x="140" y="69" class="pt-venue" fill="#58a6ff">TREC 2024 · NIST</text>
+  <text x="140" y="82" class="pt-paper">query reformulation +</text>
+  <text x="140" y="92" class="pt-paper">layered retrieval (ToT)</text>
+  <line x1="140" y1="96" x2="140" y2="114" stroke="#58a6ff" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <circle cx="140" cy="120" r="6" fill="#58a6ff" filter="url(#pt-glow)">
+    <animate attributeName="r" values="0;6;6" keyTimes="0;0.08;1" dur="0.5s" begin="0.2s" fill="freeze"/>
+    <animate attributeName="opacity" values="1;0.55;1" dur="2.2s" begin="0.7s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ══ FIRE 2025 (below) ══ -->
+  <circle cx="320" cy="120" r="6" fill="#56d364" filter="url(#pt-glow)">
+    <animate attributeName="r" values="0;6;6" keyTimes="0;0.08;1" dur="0.5s" begin="0.5s" fill="freeze"/>
+    <animate attributeName="opacity" values="1;0.55;1" dur="2.2s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+  <line x1="320" y1="126" x2="320" y2="140" stroke="#56d364" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <rect x="242" y="140" width="156" height="44" rx="6" class="pt-card" stroke="#56d364"/>
+  <text x="320" y="157" class="pt-venue" fill="#56d364">FIRE 2025</text>
+  <text x="320" y="170" class="pt-paper">hierarchical opinion</text>
+  <text x="320" y="180" class="pt-paper">classification with LLMs</text>
+
+  <!-- ══ ECIR 2026 (above) ══ -->
+  <rect x="422" y="52" width="156" height="44" rx="6" class="pt-card" stroke="#d2a8ff"/>
+  <text x="500" y="69" class="pt-venue" fill="#d2a8ff">ECIR 2026</text>
+  <text x="500" y="82" class="pt-paper">AgriIR — domain-specific</text>
+  <text x="500" y="92" class="pt-paper">retrieval · 34.5% acc.</text>
+  <line x1="500" y1="96" x2="500" y2="114" stroke="#d2a8ff" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <circle cx="500" cy="120" r="7" fill="#d2a8ff" filter="url(#pt-glow)">
+    <animate attributeName="r" values="0;7;7" keyTimes="0;0.08;1" dur="0.5s" begin="0.8s" fill="freeze"/>
+    <animate attributeName="opacity" values="1;0.55;1" dur="2.2s" begin="1.3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ══ WIP (below) ══ -->
+  <circle cx="680" cy="120" r="6" fill="#e3b341" filter="url(#pt-glow)" stroke-dasharray="2,2">
+    <animate attributeName="r" values="0;6;6" keyTimes="0;0.08;1" dur="0.5s" begin="1.1s" fill="freeze"/>
+    <animate attributeName="opacity" values="1;0.45;1" dur="1.6s" begin="1.6s" repeatCount="indefinite"/>
+  </circle>
+  <line x1="680" y1="126" x2="680" y2="140" stroke="#e3b341" stroke-width="1.2" stroke-dasharray="3,3"/>
+  <rect x="602" y="140" width="156" height="44" rx="6" class="pt-card" stroke="#e3b341" stroke-dasharray="5,3"/>
+  <text x="680" y="157" class="pt-venue" fill="#e3b341">IN PREP — DFT</text>
+  <text x="680" y="170" class="pt-paper">[VO(SALIEP)(DTP)] water-</text>
+  <text x="680" y="180" class="pt-paper">reduction catalyst · B3LYP</text>
+</svg>
