@@ -278,7 +278,7 @@ BS-MS student at **Indian Institute of Science Education and Research, Kolkata**
 
 ## GitHub Stats
 
-> All stat services below are self-verifying: dead ones (github-readme-stats, trophy, contributor-stats) were removed in the v2 redesign — only endpoints verified alive are embedded.
+> Every stat service below was verified alive (HTTP 200, valid SVG) at embed time. Dead endpoints — github-readme-stats (deployment paused), profile-trophy and contributor-stats (disabled), streak-stats herokuapp (shut down) — were removed in the v2 redesign rather than left rendering error images.
 
 <p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Shuvam-Banerji-Seal&theme=radical" width="49%" alt="GitHub Stats"/>
