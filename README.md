@@ -35,12 +35,10 @@
 
 **Lab log.** Final-year BS-MS at IISER Kolkata (chemistry major, computer-science minor, CGPA 8.2). I work where computational chemistry meets machine learning and information retrieval: DFT and molecular dynamics on one side, retrieval-augmented LLMs and how to evaluate them on the other. The MS thesis is where the two worldlines meet.
 
-| | |
-|:--|:--|
-| **Observing now** | MS thesis (Lean 4 × MoE for RNA) · SycoLex and the FIRE 2026 sycophancy track · Molecule3D |
-| **Guilds founded** | [iFiNN](https://synapse-iiserk.github.io/) (AI fintech) and [UnderWater AI](https://underwater-ai.github.io/) (deep-tech), both funded by MeitY Startup Hub through GENESIS and incubated at RISE, IISER Kolkata |
-| **Open to** | ML for science · molecular simulation · quantum chemistry · IR and RAG evaluation |
-| **Signal** | sbs22ms076@iiserkol.ac.in |
+- **Observing now:** MS thesis (Lean 4 × MoE for RNA) · SycoLex and the FIRE 2026 sycophancy track · Molecule3D
+- **Guilds founded:** [iFiNN](https://synapse-iiserk.github.io/) (AI fintech) and [UnderWater AI](https://underwater-ai.github.io/) (deep-tech), both funded by MeitY Startup Hub through GENESIS and incubated at RISE, IISER Kolkata
+- **Open to:** ML for science · molecular simulation · quantum chemistry · IR and RAG evaluation
+- **Signal:** sbs22ms076@iiserkol.ac.in
 
 ## Worldline Map
 
@@ -176,82 +174,65 @@
 ### Side Quest I · Synthesize the catalyst from the DFT study
 
 <details>
-<summary><strong>Step 1: Choose your central metal</strong></summary>
-
-> You need a redox-active transition metal capable of oxo-coordination for water reduction.
-
-- <details><summary>Select Vanadium (V)</summary>
-
-  Correct instinct. Vanadium(IV) oxo-complexes are known water-reduction catalysts, and the d¹ electron gives you an EPR handle too.
-
-  - <details><summary>Add Salen-type ligand (SALIEP)</summary>
-
-    SALIEP provides strong N/O donors that stabilise V(IV). Now choose the co-ligand.
-
-    - <details><summary>Add dithiophosphate (DTP)</summary>
-
-      **You built [VO(SALIEP)(DTP)]**, the exact target complex from the DFT/B3LYP study.
-      Run Gaussian with B3LYP/6-311G(d,p), compute MO energies, map the water-reduction pathway.
-      The V=O stretch should land near 965 cm⁻¹; if it does, your geometry converged.
-    </details>
-    - <details><summary>Add bipyridine (bpy)</summary>
-
-      Interesting coordination, but bpy makes the complex too inert for proton-coupled electron transfer here. Swap in dithiophosphate (DTP).
-    </details>
-  </details>
-
-  - <details><summary>Add only H₂O as ligand</summary>
-
-    Water alone will not chelate stably; it exchanges too fast. Try a stronger donor like SALIEP.
-  </details>
-</details>
-
-- <details><summary>Select Iron (Fe)</summary>
-
-  Iron catalyses plenty of chemistry, but this specific DFT study uses vanadium. Try again.
-</details>
-
-- <details><summary>Select Zinc (Zn)</summary>
-
-  d¹⁰: diamagnetic and redox-silent. No unpaired electron, no EPR signal, no water reduction here. Pick a metal with available d-electrons.
-</details>
-
+<summary><b>Step 1: Choose your central metal</b></summary>
+<blockquote>You need a redox-active transition metal capable of oxo-coordination for water reduction.</blockquote>
+<ul>
+<li><details><summary>Select Vanadium (V)</summary>
+<p>Correct instinct. Vanadium(IV) oxo-complexes are known water-reduction catalysts, and the d¹ electron gives you an EPR handle too.</p>
+<ul>
+<li><details><summary>Add Salen-type ligand (SALIEP)</summary>
+<p>SALIEP provides strong N/O donors that stabilise V(IV). Now choose the co-ligand.</p>
+<ul>
+<li><details><summary>Add dithiophosphate (DTP)</summary>
+<p><b>You built [VO(SALIEP)(DTP)]</b>, the exact target complex from the DFT/B3LYP study. Run Gaussian with B3LYP/6-311G(d,p), compute MO energies, map the water-reduction pathway. The V=O stretch should land near 965 cm⁻¹; if it does, your geometry converged.</p>
+</details></li>
+<li><details><summary>Add bipyridine (bpy)</summary>
+<p>Interesting coordination, but bpy makes the complex too inert for proton-coupled electron transfer here. Swap in dithiophosphate (DTP).</p>
+</details></li>
+</ul>
+</details></li>
+<li><details><summary>Add only H₂O as ligand</summary>
+<p>Water alone will not chelate stably; it exchanges too fast. Try a stronger donor like SALIEP.</p>
+</details></li>
+</ul>
+</details></li>
+<li><details><summary>Select Iron (Fe)</summary>
+<p>Iron catalyses plenty of chemistry, but this specific DFT study uses vanadium. Try again.</p>
+</details></li>
+<li><details><summary>Select Zinc (Zn)</summary>
+<p>d¹⁰: diamagnetic and redox-silent. No unpaired electron, no EPR signal, no water reduction here. Pick a metal with available d-electrons.</p>
+</details></li>
+</ul>
 </details>
 
 ### Side Quest II · Build the hybrid RAG pipeline (ECIR 2026)
 
 <details>
-<summary><strong>Step 1: Choose your retriever</strong></summary>
-
-- <details><summary>Dense retrieval only (vector embeddings)</summary>
-
-  Handles semantic similarity well, but misses exact keyword matches for rare technical terms. Upgrade?
-
-  - <details><summary>Add BM25 sparse retrieval in parallel</summary>
-
-    Now you have hybrid retrieval. How do you merge the two ranked lists?
-
-    - <details><summary>Reciprocal Rank Fusion (RRF)</summary>
-
-      **Perfect.** RRF combines ranked lists without score calibration. Add HyDE (hypothetical document embeddings) for query refinement and wrap it in a Streamlit UI, and you have rebuilt the IISER-K intranet system.
-    </details>
-    - <details><summary>Weighted linear score combination</summary>
-
-      Works, but needs per-domain score calibration, which is brittle across corpora. RRF is more robust. Try again.
-    </details>
-  </details>
-</details>
-
-- <details><summary>BM25 sparse only</summary>
-
-  Fast and interpretable, but misses paraphrases. Upgrade to hybrid for better recall.
-</details>
-
-- <details><summary>Fine-tune a cross-encoder re-ranker on 50 labelled queries</summary>
-
-  Legitimate architecture, but with 50 labels you will overfit in an afternoon. Hybrid + RRF gets you further with zero labels. Try the label-free path first.
-</details>
-
+<summary><b>Step 1: Choose your retriever</b></summary>
+<ul>
+<li><details><summary>Dense retrieval only (vector embeddings)</summary>
+<p>Handles semantic similarity well, but misses exact keyword matches for rare technical terms. Upgrade?</p>
+<ul>
+<li><details><summary>Add BM25 sparse retrieval in parallel</summary>
+<p>Now you have hybrid retrieval. How do you merge the two ranked lists?</p>
+<ul>
+<li><details><summary>Reciprocal Rank Fusion (RRF)</summary>
+<p><b>Perfect.</b> RRF combines ranked lists without score calibration. Add HyDE (hypothetical document embeddings) for query refinement and wrap it in a Streamlit UI, and you have rebuilt the IISER-K intranet system.</p>
+</details></li>
+<li><details><summary>Weighted linear score combination</summary>
+<p>Works, but needs per-domain score calibration, which is brittle across corpora. RRF is more robust. Try again.</p>
+</details></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li><details><summary>BM25 sparse only</summary>
+<p>Fast and interpretable, but misses paraphrases. Upgrade to hybrid for better recall.</p>
+</details></li>
+<li><details><summary>Fine-tune a cross-encoder re-ranker on 50 labelled queries</summary>
+<p>Legitimate architecture, but with 50 labels you will overfit in an afternoon. Hybrid + RRF gets you further with zero labels. Try the label-free path first.</p>
+</details></li>
+</ul>
 </details>
 
 ### Side Quest III · Run the MD simulation (LAMMPS)
@@ -259,37 +240,31 @@
 *Solvate the vanadium complex and keep it intact for 500 ns. Three choices, one stable trajectory.*
 
 <details>
-<summary><strong>Step 1: Pick the ensemble</strong></summary>
-
-- <details><summary>NVT (fixed volume, thermostat only)</summary>
-
-  Stable and simple. With fixed volume you cannot model the solvent density change as the complex relaxes, but it is fine for a first equilibration. Proceed.
-
-  - <details><summary>Thermostat: Nosé–Hoover</summary>
-
-    Smooth, deterministic, canonical ensemble. Now the integration timestep:
-
-    - <details><summary>2 fs with constrained bonds (SHAKE)</summary>
-
-      **Stable trajectory.** Constraints remove the fast X–H vibrations, 2 fs resolves the V=O stretch, and over 500 ns the RMSD plateaus near 1.2 Å: complex intact, no dissociation. This is the production setup.
-    </details>
-    - <details><summary>5 fs bare (no constraints)</summary>
-
-      Blown up. The O–H stretch has a period of about 10 fs; a 5 fs step integrates it as energy gain and your simulation detonates within picoseconds. Constrain bonds and drop to 2 fs.
-    </details>
-  </details>
-
-  - <details><summary>Thermostat: direct velocity rescaling every step</summary>
-
-    It will hold the temperature, but it distorts the dynamics and gives the wrong fluctuation statistics. Nosé–Hoover samples the canonical ensemble properly.
-  </details>
-</details>
-
-- <details><summary>NVE (no thermostat)</summary>
-
-  Pure Newtonian dynamics: beautiful, but any drift from the equilibrated state never gets corrected. Use NVT for production.
-</details>
-
+<summary><b>Step 1: Pick the ensemble</b></summary>
+<ul>
+<li><details><summary>NVT (fixed volume, thermostat only)</summary>
+<p>Stable and simple. With fixed volume you cannot model the solvent density change as the complex relaxes, but it is fine for a first equilibration. Proceed.</p>
+<ul>
+<li><details><summary>Thermostat: Nosé–Hoover</summary>
+<p>Smooth, deterministic, canonical ensemble. Now the integration timestep:</p>
+<ul>
+<li><details><summary>2 fs with constrained bonds (SHAKE)</summary>
+<p><b>Stable trajectory.</b> Constraints remove the fast X–H vibrations, 2 fs resolves the V=O stretch, and over 500 ns the RMSD plateaus near 1.2 Å: complex intact, no dissociation. This is the production setup.</p>
+</details></li>
+<li><details><summary>5 fs bare (no constraints)</summary>
+<p>Blown up. The O–H stretch has a period of about 10 fs; a 5 fs step integrates it as energy gain and your simulation detonates within picoseconds. Constrain bonds and drop to 2 fs.</p>
+</details></li>
+</ul>
+</details></li>
+<li><details><summary>Thermostat: direct velocity rescaling every step</summary>
+<p>It will hold the temperature, but it distorts the dynamics and gives the wrong fluctuation statistics. Nosé–Hoover samples the canonical ensemble properly.</p>
+</details></li>
+</ul>
+</details></li>
+<li><details><summary>NVE (no thermostat)</summary>
+<p>Pure Newtonian dynamics: beautiful, but any drift from the equilibrated state never gets corrected. Use NVT for production.</p>
+</details></li>
+</ul>
 </details>
 
 ### Side Quest IV · Lay the genome on a Karnaugh map (MS thesis)
@@ -297,40 +272,29 @@
 *Give each DNA base a 2-bit code so that the commonest point mutations, the transitions A↔G and C↔T, are single bit flips: neighbours on the map.*
 
 <details>
-<summary><strong>Step 1: Choose the encoding</strong></summary>
-
-- <details><summary>A = 00, C = 01, G = 11, T = 10 (alphabetical along the Gray sequence)</summary>
-
-  Tidy, but A↔G is 00↔11 and C↔T is 01↔10, so both transitions cost two flips. Your map would put the commonest mutations diagonally apart. Try again.
-</details>
-
-- <details><summary>A = 00, G = 01, C = 10, T = 11</summary>
-
-  Correct. A↔G is 00↔01 and C↔T is 10↔11: each transition is one bit. Now scale up to codons: three bases, six bits, a 64-cell map. How do you order each axis?
-
-  - <details><summary>Plain binary: 000, 001, 010, 011, 100, …</summary>
-
-    011 → 100 flips three bits at once, so neighbouring cells would no longer be single mutations. Use a reflected code.
-  </details>
-
-  - <details><summary>Reflected Gray code: 000, 001, 011, 010, 110, 111, 101, 100</summary>
-
-    **Map built.** Every pair of neighbouring cells, wrap-around included, now differs in exactly one bit, which is exactly one point mutation.
-
-    The fine print: the arrow only goes one way. A↔T (00↔11) is a perfectly real point mutation that costs two flips, so not every point mutation is a neighbour. A one-way implication like that is exactly what you want a proof assistant to keep you honest about:
-
-    ```lean
-    def gray (n : ℕ) : ℕ := n ^^^ (n >>> 1)
-    -- consecutive Gray codewords differ in exactly one bit
-    ```
-  </details>
-</details>
-
-- <details><summary>One-hot, 4 bits per base (A = 1000, C = 0100, …)</summary>
-
-  Every substitution flips exactly two bits, so transitions and transversions look identical and the map loses the structure you wanted. It also needs 12 variables per codon. Go compact.
-</details>
-
+<summary><b>Step 1: Choose the encoding</b></summary>
+<ul>
+<li><details><summary>A = 00, C = 01, G = 11, T = 10 (alphabetical along the Gray sequence)</summary>
+<p>Tidy, but A↔G is 00↔11 and C↔T is 01↔10, so both transitions cost two flips. Your map would put the commonest mutations diagonally apart. Try again.</p>
+</details></li>
+<li><details><summary>A = 00, G = 01, C = 10, T = 11</summary>
+<p>Correct. A↔G is 00↔01 and C↔T is 10↔11: each transition is one bit. Now scale up to codons: three bases, six bits, a 64-cell map. How do you order each axis?</p>
+<ul>
+<li><details><summary>Plain binary: 000, 001, 010, 011, 100, …</summary>
+<p>011 → 100 flips three bits at once, so neighbouring cells would no longer be single mutations. Use a reflected code.</p>
+</details></li>
+<li><details><summary>Reflected Gray code: 000, 001, 011, 010, 110, 111, 101, 100</summary>
+<p><b>Map built.</b> Every pair of neighbouring cells, wrap-around included, now differs in exactly one bit, which is exactly one point mutation.</p>
+<p>The fine print: the arrow only goes one way. A↔T (00↔11) is a perfectly real point mutation that costs two flips, so not every point mutation is a neighbour. A one-way implication like that is exactly what you want a proof assistant to keep you honest about:</p>
+<pre><code>def gray (n : ℕ) : ℕ := n ^^^ (n &gt;&gt;&gt; 1)
+-- consecutive Gray codewords differ in exactly one bit</code></pre>
+</details></li>
+</ul>
+</details></li>
+<li><details><summary>One-hot, 4 bits per base (A = 1000, C = 0100, …)</summary>
+<p>Every substitution flips exactly two bits, so transitions and transversions look identical and the map loses the structure you wanted. It also needs 12 variables per codon. Go compact.</p>
+</details></li>
+</ul>
 </details>
 
 ## Send a D-mail
