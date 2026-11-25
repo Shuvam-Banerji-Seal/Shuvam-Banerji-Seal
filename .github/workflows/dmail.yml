@@ -1,0 +1,75 @@
+name: D-mail
+
+# Interactive README game. A visitor clicks a button on the profile, which opens a
+# pre-filled issue titled dmail|alpha, dmail|beta or dmail|steins. This job shifts
+# the shared worldline, redraws the live meter, updates the README log and closes
+# the issue with a reply. Any other issue is ignored.
+#
+# Security: untrusted issue fields reach the script only through `env:` (never via
+# ${{ }} inside `run:`), the script accepts only three fixed commands, and the
+# login is validated against GitHub's username charset before it is written.
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  dmail:
+    if: startsWith(github.event.issue.title, 'dmail|')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout latest default branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Apply the D-mail, commit and push
+        id: apply
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_USER: ${{ github.event.issue.user.login }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Two visitors can race; on a rejected push, re-apply on top of the fresh branch.
+          for attempt in 1 2 3 4 5; do
+            git fetch --quiet origin "$BRANCH"
+            git reset --quiet --hard "origin/$BRANCH"
+            python3 scripts/dmail.py
+            if git diff --quiet; then
+              echo "No state change (unrecognised D-mail)."
+              exit 0
+            fi
+            git add README.md dmail/state.json assets/worldline/dmail_meter.svg
+            git commit --quiet -m "dmail: apply #${ISSUE_NUMBER} [skip ci]"
+            if git push --quiet origin "HEAD:$BRANCH"; then
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt); retrying on the latest $BRANCH."
+            sleep $((attempt * 3))
+          done
+          echo "Could not push after 5 attempts." >&2
+          exit 1
+
+      - name: Reply and close the issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          APPLY_OUTCOME: ${{ steps.apply.outcome }}
+        run: |
+          reply="$RUNNER_TEMP/dmail_reply.md"
+          if [ "$APPLY_OUTCOME" != "success" ]; then
+            echo "The lab PC hit an error and could not apply this D-mail, so the worldline is unchanged. Feel free to try again later." > "$reply"
+          fi
+          if [ -s "$reply" ]; then
+            gh issue comment "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --body-file "$reply"
+          fi
+          gh issue close "$ISSUE_NUMBER" --repo "$GITHUB_REPOSITORY" --reason completed

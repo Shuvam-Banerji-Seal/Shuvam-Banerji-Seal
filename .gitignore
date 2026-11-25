@@ -1,2 +1,4 @@
 .rigor-trash/
 plans/
+scripts/.cache/
+__pycache__/
